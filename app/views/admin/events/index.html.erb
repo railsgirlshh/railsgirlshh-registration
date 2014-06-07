@@ -10,6 +10,7 @@
       <th>Coach reg end</th>
       <th>Attendee reg start</th>
       <th>Attendee reg end</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -23,7 +24,14 @@
         <td><%= event.coach_reg_end %></td>
         <td><%= event.attendee_reg_start %></td>
         <td><%= event.attendee_reg_end %></td>
+        <td><%= link_to 'Show', [:admin, event] %></td>
+        <td><%= link_to 'Edit', edit_admin_event_path(event) %></td>
+        <td><%= link_to 'Destroy', [:admin, event], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Event', new_admin_event_path %>
