@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  event_date: 2014-06-07
+  coach_reg_start: 2014-06-07
+  coach_reg_end: 2014-06-07
+  attendee_reg_start: 2014-06-07
+  attendee_reg_end: 2014-06-07
+
+two:
+  title: MyString
+  description: MyString
+  event_date: 2014-06-07
+  coach_reg_start: 2014-06-07
+  coach_reg_end: 2014-06-07
+  attendee_reg_start: 2014-06-07
+  attendee_reg_end: 2014-06-07
