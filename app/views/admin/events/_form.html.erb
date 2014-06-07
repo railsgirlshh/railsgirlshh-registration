@@ -25,19 +25,19 @@
   </div>
   <div class="field">
     <%= f.label :coach_reg_start %><br>
-    <%= f.date_select :coach_reg_start %>
+    <%= f.date_select :coach_reg_start, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :coach_reg_end %><br>
-    <%= f.date_select :coach_reg_end %>
+    <%= f.date_select :coach_reg_end, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :attendee_reg_start %><br>
-    <%= f.date_select :attendee_reg_start %>
+    <%= f.date_select :attendee_reg_start, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :attendee_reg_end %><br>
-    <%= f.date_select :attendee_reg_end %>
+    <%= f.date_select :attendee_reg_end, include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
