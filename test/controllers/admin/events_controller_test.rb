@@ -3,7 +3,7 @@ require_relative '../../test_helper'
 module Admin
   class EventsControllerTest < ActionController::TestCase
     setup do
-      @event = events(:one)
+      @event = events(:minimal_event)
     end
 
     test "should get index" do

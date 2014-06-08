@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @attendee_application.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @attendee_application.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @attendee_application.email %>
+</p>
+
+<p>
+  <strong>Female:</strong>
+  <%= @attendee_application.female %>
+</p>
+
+<p>
+  <strong>Application text:</strong>
+  <%= @attendee_application.application_text %>
+</p>
+
+<p>
+  <strong>Prior experience:</strong>
+  <%= @attendee_application.prior_experience %>
+</p>
+
+<p>
+  <strong>Other text:</strong>
+  <%= @attendee_application.other_text %>
+</p>
+
+<%= link_to 'Edit', edit_admin_event_attendee_application_path(@event, @attendee_application) %> |
+<%= link_to 'Back', admin_event_attendee_applications_path %>

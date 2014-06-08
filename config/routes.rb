@@ -3,8 +3,14 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index]
 
+  resources :events do
+    resources  :attendee_applications, only: [:new, :create]
+  end
+
   namespace :admin do
-    resources :events
+    resources :events do
+      resources :attendee_applications
+    end
   end
 
   get '/admin' => redirect('/admin/events')

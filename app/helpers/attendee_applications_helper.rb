@@ -1,0 +1,2 @@
+module AttendeeApplicationsHelper
+end
