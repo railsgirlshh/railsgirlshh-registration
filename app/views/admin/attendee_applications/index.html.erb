@@ -1,16 +1,12 @@
-<h1>Listing attendee_applications</h1>
-
+<h1>Attendee Applications</h1>
+<h2><%= @event.title %></h2>
 <table>
   <thead>
     <tr>
-      <th>Event</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
       <th>Female</th>
-      <th>Application text</th>
-      <th>Prior experience</th>
-      <th>Other text</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +14,10 @@
   <tbody>
     <% @attendee_applications.each do |attendee_application| %>
       <tr>
-        <td><%= attendee_application.event_id %></td>
         <td><%= attendee_application.first_name %></td>
         <td><%= attendee_application.last_name %></td>
         <td><%= attendee_application.email %></td>
         <td><%= attendee_application.female %></td>
-        <td><%= attendee_application.application_text %></td>
-        <td><%= attendee_application.prior_experience %></td>
-        <td><%= attendee_application.other_text %></td>
         <td><%= link_to 'Show', [:admin, @event, attendee_application] %></td>
         <td><%= link_to 'Edit', edit_admin_event_attendee_application_path(@event, attendee_application) %></td>
         <td><%= link_to 'Destroy', [:admin, @event, attendee_application], method: :delete, data: { confirm: 'Are you sure?' } %></td>
