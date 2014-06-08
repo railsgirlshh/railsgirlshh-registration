@@ -2,16 +2,24 @@ class AttendeeApplicationsController < ApplicationController
   before_action :set_event
 
   def new
-    @attendee_application = @event.attendee_applications.build
+    if @event.attendee_reg_open?
+      @attendee_application = @event.attendee_applications.build
+    else
+      redirect_to root_url, notice: 'Attendee application is not open.'
+    end
   end
 
   def create
-    @attendee_application = @event.attendee_applications.build(attendee_application_params) 
+    if @event.attendee_reg_open?
+      @attendee_application = @event.attendee_applications.build(attendee_application_params) 
 
-    if @attendee_application.save
-      redirect_to root_url, notice: 'Attendee application was successfully created.'
+      if @attendee_application.save
+        redirect_to root_url, notice: 'Attendee application was successfully created.'
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_url, notice: 'Attendee application is not open.'
     end
   end
 
