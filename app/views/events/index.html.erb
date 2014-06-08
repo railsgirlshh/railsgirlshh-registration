@@ -1,29 +1,17 @@
-<h1>Listing events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Event date</th>
-      <th>Coach reg start</th>
-      <th>Coach reg end</th>
-      <th>Attendee reg start</th>
-      <th>Attendee reg end</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.event_date %></td>
-        <td><%= event.coach_reg_start %></td>
-        <td><%= event.coach_reg_end %></td>
-        <td><%= event.attendee_reg_start %></td>
-        <td><%= event.attendee_reg_end %></td>
-      </tr>
+<h1 class="text-center">Upcoming Events</h1>
+<div class="row">
+  <div class="large-12 large-centered columns">
+    <% @events.reject{|e| e.is_over?}.each do |event| %>
+    <h2><%= event.title %></h2>
+    <p>Date: <%= event.event_date.to_s(:long) %></p>
+    <% if event.description.present? %>
+    <p><%= event.description %></p>
     <% end %>
-  </tbody>
-</table>
+    <h3>Attendee Registration</h3>
+    <p><%= attendee_registration_display(event) %></p>
+    <h3>Coach Registration</h3>
+    <p><%= coach_registration_display(event) %></p>
+    <% end %>
+    <hr>
+  </div>
+</div
