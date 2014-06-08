@@ -14,6 +14,16 @@ class Event < ActiveRecord::Base
     event_date < Date.today
   end
 
+  def coach_reg_end_date
+    coach_reg_end || event_date
+  end
+
+  def coach_reg_open?
+    return false if coach_reg_end_date < Date.today
+    return true if coach_reg_start.blank?
+    coach_reg_start <= Date.today
+  end
+
   private
   def event_in_the_future
     return if event_date.blank?

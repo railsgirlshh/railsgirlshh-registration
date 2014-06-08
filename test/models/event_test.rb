@@ -62,4 +62,60 @@ module EventTest
       assert_not event.is_over?, "is_over? is false for today's event"
     end
   end
+
+  class CoachRegEndDateTest < ActiveSupport::TestCase
+    test 'expects event date if no end given' do
+      event = events(:minimal_event)
+      assert_equal event.coach_reg_end_date, event.event_date, 'expects event date if no end given'
+    end
+
+    test 'expects end if not blank' do
+      event = events(:minimal_event)
+      event.coach_reg_end= Date.today+2
+      assert_equal event.coach_reg_end_date, event.coach_reg_end, 'expects end if not blank'
+    end
+  end
+
+  class CoachRegOpenTest < ActiveSupport::TestCase
+    test 'expects true if no start or end' do
+      event = events(:minimal_event)
+      assert event.coach_reg_open?, 'should be true if start and end empty'
+    end
+
+    test 'expects true if no start and end in the future' do
+      event = events(:minimal_event)
+      event.coach_reg_end= Date.today + 2
+      assert event.coach_reg_open?, 'should be true if end in the future'
+    end
+
+    test 'expects true if start in the past end end date in the future' do
+      event = events(:minimal_event)
+      event.coach_reg_start= Date.today - 2
+      event.coach_reg_end= Date.today + 2
+      assert event.coach_reg_open?, 'should be true if start in the past, end in the future'
+    end
+
+    test 'expects true if start date in the past, no end, end event in the future' do
+      event = events(:minimal_event)
+      event.coach_reg_start= Date.today - 2
+      assert event.coach_reg_open?, 'should be true if start in the past and no end given'
+    end
+
+    test 'expects false if event is over' do
+      event = events(:past_event)
+      assert_not event.coach_reg_open?, 'should be false if event is over'
+    end
+
+    test 'expects false if start is in the future' do
+      event = events(:minimal_event)
+      event.coach_reg_start= Date.today + 2
+      assert_not event.coach_reg_open?, 'should be false if start is in the future'
+    end
+
+    test 'expects false if end is in the past' do
+      event = events(:minimal_event)
+      event.coach_reg_end= Date.today - 2
+      assert_not event.coach_reg_open?, 'should be false if end is in the past'
+    end
+  end
 end
