@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'events#index'
+
   resources :events, only: [:index]
 
   namespace :admin do
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/admin' => redirect('/admin/events')
 
-
+  get '*path' => redirect('/')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
