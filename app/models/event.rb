@@ -10,6 +10,10 @@ class Event < ActiveRecord::Base
 
   validate :event_in_the_future, on: :create
 
+  def is_over?
+    event_date < Date.today
+  end
+
   private
   def event_in_the_future
     return if event_date.blank?

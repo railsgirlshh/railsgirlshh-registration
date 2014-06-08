@@ -1,19 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyString
-  event_date: 2014-06-07
-  coach_reg_start: 2014-06-07
-  coach_reg_end: 2014-06-07
-  attendee_reg_start: 2014-06-07
-  attendee_reg_end: 2014-06-07
+minimal_event:
+  title: Spring Workshop
+  event_date: <%= Date.today+10 %>
 
-two:
-  title: MyString
+past_event:
+  title: Past Workshop
   description: MyString
-  event_date: 2014-06-07
-  coach_reg_start: 2014-06-07
-  coach_reg_end: 2014-06-07
-  attendee_reg_start: 2014-06-07
-  attendee_reg_end: 2014-06-07
+  event_date: 2014-05-07
+  coach_reg_start: 2014-04-07
+  coach_reg_end: 2014-04-30
+  attendee_reg_start: 2014-04-07
+  attendee_reg_end: 2014-04-30

@@ -43,4 +43,23 @@ module EventTest
       assert event.save, "Updated the event with event date in the past"
     end
   end
+
+  class IsOverTest < ActiveSupport::TestCase
+    test 'should return true if event date is in the past' do
+      event = events(:past_event)
+      assert event.is_over?, 'is_over? is true for past event'
+    end
+
+    test 'should return false if event is in the future' do
+      event = events(:minimal_event)
+      assert_not event.is_over?, 'is_over? is false for future event'
+    end
+
+    test 'should return false if event is today' do
+      event = events(:minimal_event)
+      event.event_date= Date.today
+      event.save
+      assert_not event.is_over?, "is_over? is false for today's event"
+    end
+  end
 end
