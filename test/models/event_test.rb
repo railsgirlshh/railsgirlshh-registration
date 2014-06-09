@@ -72,7 +72,7 @@ module EventTest
     test 'expects end if not blank' do
       event = events(:minimal_event)
       event.coach_reg_end= Date.today+2
-      assert_equal event.coach_reg_end_date, event.coach_reg_end, 'expects end if not blank'
+      assert_equal event.coach_reg_end, event.coach_reg_end_date, 'expects end if not blank'
     end
   end
 
@@ -122,13 +122,13 @@ module EventTest
   class AttendeeRegEndDateTest < ActiveSupport::TestCase
     test 'expects event date if no end given' do
       event = events(:minimal_event)
-      assert_equal event.attendee_reg_end_date, event.event_date, 'expects event date if no end given'
+      assert_equal event.event_date, event.attendee_reg_end_date, 'expects event date if no end given'
     end
 
     test 'expects end if not blank' do
       event = events(:minimal_event)
       event.attendee_reg_end= Date.today+2
-      assert_equal event.attendee_reg_end_date, event.attendee_reg_end, 'expects end if not blank'
+      assert_equal event.attendee_reg_end, event.attendee_reg_end_date, 'expects end if not blank'
     end
   end
 

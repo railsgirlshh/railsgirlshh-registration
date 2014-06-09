@@ -28,7 +28,7 @@ module AttendeeApplicationTest
     test "should save attendee application with mandatory data and set default status" do
       attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com')
       assert attendee_application.save, "Did not save the attendee application with mandatory data"
-      assert_equal attendee_application.status, "open", "did not set default status"
+      assert_equal "open", attendee_application.status, "did not set default status"
     end
 
     test "should save attendee application with full data" do
