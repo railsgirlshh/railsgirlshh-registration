@@ -24,5 +24,16 @@ module AttendeeApplicationTest
       attendee_application = AttendeeApplication.new(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com')
       assert_not attendee_application.save, "Saved the attendee application without event association"
     end
+
+    test "should save attendee application with mandatory data and set default status" do
+      attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com')
+      assert attendee_application.save, "Did not save the attendee application with mandatory data"
+      assert_equal attendee_application.status, "open", "did not set default status"
+    end
+
+    test "should save attendee application with full data" do
+      attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', female: true, prior_experience: 'django', application_text: 'I want to learn rails', other_text: 'foo bar', status: 'rejected')
+      assert attendee_application.save, "Did not save the attendee application with mandatory data"
+    end
   end
 end

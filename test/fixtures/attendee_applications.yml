@@ -9,6 +9,7 @@ one:
   application_text: MyText
   prior_experience: MyText
   other_text: MyText
+  status: open
 
 two:
   event_id: 1
@@ -19,3 +20,4 @@ two:
   application_text: MyText
   prior_experience: MyText
   other_text: MyText
+  status: rejected

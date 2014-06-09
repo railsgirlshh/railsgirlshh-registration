@@ -20,6 +20,10 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, options_for_select(@statuses.collect { |s| [s[0].humanize, s[0]] }, selected: @attendee_application.status) %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>

@@ -3,6 +3,11 @@
 <h1>Application for <%= @event.title %></h1>
 <h2><%= @attendee_application.first_name + ' ' + @attendee_application.last_name %></h2> 
 <p>
+  <strong>Status:</strong>
+  <%= @attendee_application.status.humanize %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @attendee_application.email %>
 </p>
