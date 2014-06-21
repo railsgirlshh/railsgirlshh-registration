@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :events do
-      resources :attendee_applications
+      resources :attendee_applications do
+        member do
+          post 'accept'
+        end
+      end
     end
   end
 

@@ -1,0 +1,11 @@
+$('.button_to').bind('ajax:success', function() {
+		$(this).closest('td').prev('td').replaceWith('<td> Accepted </td>');
+	});
+
+
+$('.button_to').bind('ajax:success', function() {
+		$(this).empty();
+	});
+
+
+

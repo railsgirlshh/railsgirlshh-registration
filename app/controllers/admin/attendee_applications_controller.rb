@@ -1,7 +1,7 @@
 module Admin
   class AttendeeApplicationsController < ApplicationController
     before_action :set_event
-    before_action :set_attendee_application, only: [:show, :edit, :update, :destroy]
+    before_action :set_attendee_application, only: [:show, :edit, :update, :destroy, :accept]
     before_action :set_statuses, only: [:new, :edit, :create, :update]
 
     def index
@@ -42,13 +42,17 @@ module Admin
     end
 
     def accept
-      if @attendee_application.accepted!
-        redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully accepted.'
-      else
-        render :edit
+      respond_to do |format|
+        if @attendee_application.accepted!
+          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully accepted.' }
+          format.js   { }
+        else
+          format.html { render action: "edit" }
+          format.js   { render status: 500 }
+        end
       end
     end
-
+ 
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendee_application
