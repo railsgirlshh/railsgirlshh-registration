@@ -56,5 +56,13 @@ module Admin
 
       assert_redirected_to admin_event_attendee_application_path(@event, assigns(:attendee_application))
     end
+
+    test "should reject attendee_application" do
+      assert_difference('AttendeeApplication.rejected.count') do
+        post :reject, event_id: @event.id, id: @attendee_application
+      end
+
+      assert_redirected_to admin_event_attendee_application_path(@event, assigns(:attendee_application))
+    end
   end
 end

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :attendee_applications do
         member do
           post 'accept'
+          post 'reject'
         end
       end
     end

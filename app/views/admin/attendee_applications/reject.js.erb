@@ -1,5 +1,5 @@
 $('.button_to').bind('ajax:success', function() {
-		$('#status-<%= @attendee_application.id %>').replaceWith('Accepted');
+		$('#status-<%= @attendee_application.id %>').replaceWith('Rejected');
 	});
 
 
@@ -10,6 +10,3 @@ $('.button_to').bind('ajax:success', function() {
 $('.button_to').bind('ajax:success', function() {
 		$('#reject-<%= @attendee_application.id %>').empty();
 	});
-
-
-

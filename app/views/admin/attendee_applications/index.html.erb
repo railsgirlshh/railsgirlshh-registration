@@ -9,6 +9,7 @@
       <th>Female</th>
       <th>Status</th>
       <th>Accept</th>
+      <th>Reject</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,12 +21,20 @@
         <td><%= attendee_application.last_name %></td>
         <td><%= attendee_application.email %></td>
         <td><%= attendee_application.female %></td>
-        <td><%= attendee_application.status.humanize %></td>
-	<td><% if attendee_application.open? || attendee_application.on_waiting_list? %>
+        <td><span id="status-<%= attendee_application.id %>"><%= attendee_application.status.humanize %></span></td>
+	<td><span id="accept-<%= attendee_application.id %>"><% if attendee_application.open? || attendee_application.on_waiting_list? %>
 	  <%= button_to [:accept, :admin, @event, attendee_application], remote: true, class: 'button tiny'  do %>
 	  Accept
 	  <% end %>
 	  <% end %>
+	  </span>
+	</td>
+	<td><span id="reject-<%= attendee_application.id %>"><% if attendee_application.open? || attendee_application.on_waiting_list? %>
+	  <%= button_to [:reject, :admin, @event, attendee_application], remote: true, class: 'button tiny'  do %>
+	  Reject
+	  <% end %>
+	  <% end %>
+	  </span>
 	</td>
         <td><%= link_to 'Show', [:admin, @event, attendee_application] %></td>
         <td><%= link_to 'Edit', edit_admin_event_attendee_application_path(@event, attendee_application) %></td>
