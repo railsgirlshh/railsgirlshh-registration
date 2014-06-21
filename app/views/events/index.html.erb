@@ -16,7 +16,7 @@
       <%= attendee_registration_display(event) %>
       <br>
       <% if event.attendee_reg_open? %>
-        <%= link_to 'Apply Now', new_event_attendee_application_path(event), class: "button tiny radius" %>
+        <%= button_to 'Apply Now', new_event_attendee_application_path(event), class: "button tiny radius", method: 'get' %>
       <% end %>
     </p>
     <h3>Coach Registration</h3>

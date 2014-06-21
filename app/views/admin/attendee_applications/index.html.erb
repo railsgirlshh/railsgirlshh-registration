@@ -23,14 +23,14 @@
         <td><%= attendee_application.female %></td>
         <td><span id="status-<%= attendee_application.id %>"><%= attendee_application.status.humanize %></span></td>
 	<td><span id="accept-<%= attendee_application.id %>"><% if attendee_application.open? || attendee_application.on_waiting_list? %>
-	  <%= button_to [:accept, :admin, @event, attendee_application], remote: true, class: 'button tiny'  do %>
+	  <%= button_to [:accept, :admin, @event, attendee_application], remote: true, class: 'button tiny radius'  do %>
 	  Accept
 	  <% end %>
 	  <% end %>
 	  </span>
 	</td>
 	<td><span id="reject-<%= attendee_application.id %>"><% if attendee_application.open? || attendee_application.on_waiting_list? %>
-	  <%= button_to [:reject, :admin, @event, attendee_application], remote: true, class: 'button tiny'  do %>
+	  <%= button_to [:reject, :admin, @event, attendee_application], remote: true, class: 'button tiny radius'  do %>
 	  Reject
 	  <% end %>
 	  <% end %>
