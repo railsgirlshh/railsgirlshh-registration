@@ -11,7 +11,7 @@ class AttendeeApplicationsController < ApplicationController
 
   def create
     if @event.attendee_reg_open?
-      @attendee_application = @event.attendee_applications.build(attendee_application_params) 
+      @attendee_application = @event.attendee_applications.build(attendee_application_params)
 
       if @attendee_application.save
         redirect_to root_url, notice: 'Attendee application was successfully created.'
@@ -19,7 +19,7 @@ class AttendeeApplicationsController < ApplicationController
         render :new
       end
     else
-      redirect_to root_url, notice: 'Attendee application is not open.'
+      redirect_to root_url, error: 'Attendee application is not open.'
     end
   end
 

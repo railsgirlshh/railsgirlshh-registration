@@ -1,7 +1,16 @@
 <% content_for :title do %>
   Rails Girls Hamburg - Upcoming Events
 <% end %>
-
+<% if flash[:error].present? %>
+  <div data-alert class="alert-box radius">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+<% if flash[:notice].present? %>
+  <div data-alert class="alert-box radius success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 <h1 class="text-center">Upcoming Events</h1>
 <div class="row">
   <div class="large-12 large-centered columns">
