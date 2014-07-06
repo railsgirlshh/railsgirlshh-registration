@@ -19,7 +19,7 @@ class AttendeeApplicationsController < ApplicationController
         render :new
       end
     else
-      redirect_to root_url, error: 'Attendee application is not open.'
+      redirect_to root_url, alert: 'Attendee application is not open.'
     end
   end
 

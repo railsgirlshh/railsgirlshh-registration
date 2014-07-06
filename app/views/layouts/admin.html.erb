@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="row">
+    <div class="large-12 large-centered columns">
+      <% if a = alert %>
+        <div data-alert class="alert-box radius">
+          <%= a %>
+        </div>
+      <% end %>
+      <% if n = notice %>
+        <div data-alert class="alert-box success radius">
+          <%= n %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 <%= yield %>
 
