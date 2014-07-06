@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources  :attendee_applications, only: [:new, :create]
   end
 
+  get 'events/:event_id/attendee_applications/self_care/:token', to: 'attendee_applications#self_care'
+  post 'events/:event_id/attendee_applications/cancel/:token', to: 'attendee_applications#cancel'
+
   namespace :admin do
     resources :events do
       resources :attendee_applications do

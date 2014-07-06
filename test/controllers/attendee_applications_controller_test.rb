@@ -37,5 +37,16 @@ class AttendeeApplicationsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
+  test "should get self_care" do
+    get :self_care, event_id: @attendee_application.event_id, token: @attendee_application.token
+    assert_response :success
+  end
 
+  test "should cancel attendee_application" do
+    assert_difference('AttendeeApplication.canceled.count') do
+      post :cancel, event_id: @event.id, token: @attendee_application.token
+    end
+
+    assert_redirected_to root_path
+  end
 end

@@ -10,6 +10,7 @@ one:
   prior_experience: MyText
   other_text: MyText
   status: open
+  token: 123asdf
 
 two:
   event_id: 1
@@ -21,3 +22,4 @@ two:
   prior_experience: MyText
   other_text: MyText
   status: rejected
+  token: 321gfdsa

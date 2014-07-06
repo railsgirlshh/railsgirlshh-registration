@@ -1,5 +1,5 @@
 <h1>Application for <%= @event.title %></h1>
-<h2><%= @attendee_application.first_name + ' ' + @attendee_application.last_name %></h2> 
+<h2><%= @attendee_application.first_name + ' ' + @attendee_application.last_name %></h2>
 <p>
   <strong>Status:</strong>
   <%= @attendee_application.status.humanize %>
@@ -23,6 +23,9 @@
 
 <h3>Other text</h3>
 <p> <%= @attendee_application.other_text %></p>
+
+<h3>Self Care Url</h3>
+<p> <%= attendee_self_care_url(@attendee_application) %></p>
 
 <%= link_to 'Edit', edit_admin_event_attendee_application_path(@event, @attendee_application) %> |
 <%= link_to 'Back', admin_event_attendee_applications_path %>
