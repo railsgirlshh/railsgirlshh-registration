@@ -2,30 +2,9 @@
 
 {<img src="https://travis-ci.org/railsgirlshh/railsgirlshh-registration.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/railsgirlshh/railsgirlshh-registration]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Girls Hamburg - attendee application and coach registration
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails 4 application, Ruby 2.1.1
 
 * Create an admin account on the console: AdminAccount.create(username: "foo", password_sha1: Digest::SHA1.hexdigest("bar"))
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
