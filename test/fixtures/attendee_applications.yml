@@ -4,7 +4,7 @@ one:
   event_id: 1
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: MyString@exampl.com
   female: false
   application_text: MyText
   prior_experience: MyText
@@ -16,7 +16,7 @@ two:
   event_id: 1
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: MyString@exampl.com
   female: false
   application_text: MyText
   prior_experience: MyText
