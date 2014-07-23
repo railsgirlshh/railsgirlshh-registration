@@ -1,0 +1,5 @@
+<h1> Cancel your Application </h1>
+<p> You have applied for <%= @event.title %> </p>
+<p> Do you really want to cancel your application? </p>
+    <%= button_to "Yes, cancel my application", { action: "cancel", event_id: @event.id, token: @coach_application.token }, class: 'button tiny radius' %>
+    <%= link_to 'No thanks, get me out of here', root_url %>

@@ -19,8 +19,14 @@
       <% end %>
     </p>
     <h3>Coach Registration</h3>
-    <p><%= coach_registration_display(event) %></p>
+    <p>
+      <%= coach_registration_display(event) %>
+      <br>
+      <% if event.coach_reg_open? %>
+        <%= button_to 'Apply Now', new_event_coach_application_path(event), class: "button tiny radius", method: 'get' %>
+      <% end %>
+    </p>
     <% end %>
     <hr>
   </div>
-</div
+</div>

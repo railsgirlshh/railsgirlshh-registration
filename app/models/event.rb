@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   has_many :attendee_applications
+  has_many :coach_applications
   validates_presence_of :title, :event_date
 
   validates_each :coach_reg_start, :coach_reg_end, :attendee_reg_start, :attendee_reg_end do |record, attr, value|

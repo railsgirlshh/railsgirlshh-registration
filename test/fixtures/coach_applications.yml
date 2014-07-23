@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString@example.com
+  application_text: MyText
+  other_text: MyText
+  status: registered
+  token: 123asdf
+
+two:
+  event_id: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString@example.com
+  application_text: MyText
+  other_text: MyText
+  status: canceled
+  token: 321gfdsa
