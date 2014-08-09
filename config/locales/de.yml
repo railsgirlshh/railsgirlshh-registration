@@ -19,8 +19,8 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+de:
   events:
-    title:  "Rails Girls Hamburg - Upcoming Events"
-    attendee_registration: "Attendee Registration"
-    coach_registration: "Coach Registration"
+    title:  "Rails Girls Hamburg - Kommende Veranstaltungen"
+    attendee_registration: "Teilnehmerinnen Anmeldung"
+    coach_registration: "Coach Anmeldung"
