@@ -15,7 +15,7 @@
       <%= attendee_registration_display(event) %>
       <br>
       <% if event.attendee_reg_open? %>
-        <%= button_to 'Apply Now', new_event_attendee_application_path(event), class: "button tiny radius", method: 'get' %>
+        <%= button_to t('events.submit_apply'), new_event_attendee_application_path(event), class: "button tiny radius", method: 'get' %>
       <% end %>
     </p>
     <h3><%= t 'events.coach_registration' %></h3>
@@ -23,7 +23,7 @@
       <%= coach_registration_display(event) %>
       <br>
       <% if event.coach_reg_open? %>
-        <%= button_to 'Apply Now', new_event_coach_application_path(event), class: "button tiny radius", method: 'get' %>
+        <%= button_to t('events.submit_apply'), new_event_coach_application_path(event), class: "button tiny radius", method: 'get' %>
       <% end %>
     </p>
     <% end %>
