@@ -239,6 +239,11 @@ en:
       registration_successful: "Attendee application was successfully created."
       registration_canceled: "Your application has been canceled."
       cancellation_error: "Something went wrong when trying to cancel your application."
+    coach:
+      registration_not_open: "Coach application is not open."
+      registration_successful: "Coach application was successfully created."
+      registration_canceled: "Your application has been canceled."
+      cancellation_error: "Something went wrong when trying to cancel your application."
   alert:
     event_not_found: "The event you were looking for could not be found."
     application_not_found: "We could not find your application."

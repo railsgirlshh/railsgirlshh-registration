@@ -6,7 +6,7 @@ class CoachApplicationsController < ApplicationController
     if @event.coach_reg_open?
       @coach_application = @event.coach_applications.build
     else
-      redirect_to root_url, notice: 'Coach application is not open.'
+      redirect_to root_url, notice: t('notice.coach.registration_not_open')
     end
   end
 
@@ -15,12 +15,12 @@ class CoachApplicationsController < ApplicationController
       @coach_application = @event.coach_applications.build(coach_application_params)
 
       if @coach_application.save
-        redirect_to root_url, notice: 'Coach application was successfully created.'
+        redirect_to root_url, notice: t('notice.coach.registration_successful')
       else
         render :new
       end
     else
-      redirect_to root_url, alert: 'Coach application is not open.'
+      redirect_to root_url, alert: t('notice.coach.registration_not_open')
     end
   end
 
@@ -29,9 +29,9 @@ class CoachApplicationsController < ApplicationController
 
   def cancel
     if @coach_application.canceled!
-      redirect_to root_url, notice: 'Your application has been canceled.'
+      redirect_to root_url, notice: t('notice.coach.registration_canceled')
     else
-      redirect_to root_url, alert: 'Something went wrong when trying to cancel your application.'
+      redirect_to root_url, alert: t('notice.coach.cancellation_error')
     end
   end
 
@@ -40,14 +40,13 @@ class CoachApplicationsController < ApplicationController
   def set_event
     @event = Event.find(params[:event_id])
   rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The event you were looking " +
-                      "for could not be found."
+      flash[:alert] = t('alert.event_not_found')
     redirect_to root_path
   end
 
   def set_coach_application_via_token
     @coach_application = CoachApplication.find_by token: params[:token], event: @event
-    redirect_to root_url, alert: 'We could not find your application.' unless @coach_application.present?
+    redirect_to root_url, alert: t('alert.application_not_found') unless @coach_application.present?
   end
 
   # Only allow a trusted parameter "white list" through.
