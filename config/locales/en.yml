@@ -25,3 +25,8 @@ en:
     attendee_registration: "Attendee Registration"
     coach_registration: "Coach Registration"
     submit_apply: "Apply Now"
+  events_helper:
+    registration_open: "Register for this event. Registration closes"
+    registration_closed: "Registration is closed."
+    registration_opens: "Registration opens"
+    registration_closes: "and closes"

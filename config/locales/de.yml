@@ -25,3 +25,8 @@ de:
     attendee_registration: "Teilnehmerinnen Anmeldung"
     coach_registration: "Coach Anmeldung"
     submit_apply: "Jetzt bewerben"
+  events_helper:
+    registration_open: "Bewirb dich fuer diese Veranstaltung. Bewerbung endet am"
+    registration_closed: "Bewerbung leider bereits geschlossen."
+    registration_opens: "Anmeldung beginnt am"
+    registration_closes: "und endet am"
