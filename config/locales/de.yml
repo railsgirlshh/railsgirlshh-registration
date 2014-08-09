@@ -20,16 +20,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
+  dictionary:
+    first_name: &first_name "Vorname"
+    last_name: &last_name "Nachname"
+    email: &email "Email"
+    female: &female "weiblich"
+    application_text: &application_text "Bewerbungstext"
+    prior_experience: &prior_experience "Vorerfahrung"
+    other_text: &other_text "Weiteres"
   activerecord:
     attributes:
       attendee_application:
-        first_name: "Vorname"
-        last_name: "Nachname"
-        email: "Email"
-        female: "weiblich"
-        application_text: "Bewerbungstext"
-        prior_experience: "Vorerfahrung"
-        other_text: "Weiteres"
+        first_name: *first_name
+        last_name: *last_name
+        email: *email
+        female: *female
+        application_text: *application_text
+        prior_experience: *prior_experience
+        other_text: *other_text
+      coach_application:
+        first_name: *first_name
+        last_name: *last_name
+        email: *email
+        female: *female
+        application_text: *application_text
+        prior_experience: *prior_experience
+        other_text: *other_text
   events:
     title:  "Rails Girls Hamburg - Kommende Veranstaltungen"
     attendee_registration: "Teilnehmerinnen Anmeldung"
