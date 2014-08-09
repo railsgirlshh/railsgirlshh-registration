@@ -20,6 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
+  activerecord:
+    attributes:
+      attendee_application:
+        first_name: "Vorname"
+        last_name: "Nachname"
+        email: "Email"
+        female: "weiblich"
+        application_text: "Bewerbungstext"
+        prior_experience: "Vorerfahrung"
+        other_text: "Weiteres"
   events:
     title:  "Rails Girls Hamburg - Kommende Veranstaltungen"
     attendee_registration: "Teilnehmerinnen Anmeldung"
