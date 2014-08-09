@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  alert:
+    event_not_found: "The event you were looking for could not be found."
+    application_not_found: "We could not find your application."
   events:
     title:  "Rails Girls Hamburg - Upcoming Events"
     attendee_registration: "Attendee Registration"
@@ -30,6 +33,18 @@ en:
     registration_closed: "Registration is closed."
     registration_opens: "Registration opens"
     registration_closes: "and closes"
+  notice:
+    attendee:
+      registration_not_open: "Attendee application is not open."
+      registration_successful: "Attendee application was successfully created."
+      registration_canceled: "Your application has been canceled."
+      cancellation_error: "Something went wrong when trying to cancel your application."
+    coach:
+      registration_not_open: "Coach application is not open."
+      registration_successful: "Coach application was successfully created."
+      registration_canceled: "Your application has been canceled."
+      cancellation_error: "Something went wrong when trying to cancel your application."
+
   date:
     abbr_day_names:
     - Sun
@@ -233,17 +248,4 @@ en:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: pm
-  notice:
-    attendee:
-      registration_not_open: "Attendee application is not open."
-      registration_successful: "Attendee application was successfully created."
-      registration_canceled: "Your application has been canceled."
-      cancellation_error: "Something went wrong when trying to cancel your application."
-    coach:
-      registration_not_open: "Coach application is not open."
-      registration_successful: "Coach application was successfully created."
-      registration_canceled: "Your application has been canceled."
-      cancellation_error: "Something went wrong when trying to cancel your application."
-  alert:
-    event_not_found: "The event you were looking for could not be found."
-    application_not_found: "We could not find your application."
+

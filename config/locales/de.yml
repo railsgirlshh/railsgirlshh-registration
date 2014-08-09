@@ -28,6 +28,7 @@ de:
     application_text: &application_text "Bewerbungstext"
     prior_experience: &prior_experience "Vorerfahrung"
     other_text: &other_text "Weiteres"
+
   activerecord:
     attributes:
       attendee_application:
@@ -46,6 +47,9 @@ de:
         application_text: *application_text
         prior_experience: *prior_experience
         other_text: *other_text
+  alert:
+    event_not_found: "Die gesuchte Veranstaltung konnte nicht gefunden werden."
+    application_not_found: "Deine Anmeldung konnte nicht gefunden werden"
   events:
     title:  "Rails Girls Hamburg - Kommende Veranstaltungen"
     attendee_registration: "TeilnehmerInnenanmeldung"
@@ -56,6 +60,18 @@ de:
     registration_closed: "Bewerbung leider bereits geschlossen."
     registration_opens: "Anmeldung beginnt am"
     registration_closes: "und endet am"
+  notice:
+    attendee:
+      registration_not_open: "TeilnehmerInnenanmeldung ist zur Zeit nicht offen."
+      registration_successful: "TeilnehmerInnen Anmeldung erfolgreich abgeschlossen."
+      registration_canceled: "Deine Anmeldung wurde annuliert."
+      cancellation_error: "Etwas ist schief gegangen beim annulieren deiner Anmeldung."
+    coach:
+      registration_not_open: "Coach Anmeldung nicht offen."
+      registration_successful: "Coach Anmeldung erfolgreich abgeschlossen."
+      registration_canceled: "Deine Anmeldung wurde anuliert."
+      cancellation_error: "Etwas ist schief gelaufen beim anulieren deiner Anmeldung."
+
   date:
     abbr_day_names:
     - So
@@ -251,17 +267,5 @@ de:
       long: ! '%A, %d. %B %Y, %H:%M Uhr'
       short: ! '%d. %B, %H:%M Uhr'
     pm: nachmittags
-  notice:
-    attendee:
-      registration_not_open: "TeilnehmerInnenanmeldung ist zur Zeit nicht offen."
-      registration_successful: "TeilnehmerInnen Anmeldung erfolgreich abgeschlossen."
-      registration_canceled: "Deine Anmeldung wurde annuliert."
-      cancellation_error: "Etwas ist schief gegangen beim annulieren deiner Anmeldung."
-    coach:
-      registration_not_open: "Coach Anmeldung nicht offen."
-      registration_successful: "Coach Anmeldung erfolgreich abgeschlossen."
-      registration_canceled: "Deine Anmeldung wurde anuliert."
-      cancellation_error: "Etwas ist schief gelaufen beim anulieren deiner Anmeldung."
-  alert:
-    event_not_found: "Die gesuchte Veranstaltung konnte nicht gefunden werden."
-    application_not_found: "Deine Anmeldung konnte nicht gefunden werden"
+
+
