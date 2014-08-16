@@ -1,7 +1,7 @@
 <% content_for :title do %>
   Rails Girls Hamburg - Upcoming Events
 <% end %>
-<h1 class="text-center">Upcoming Events</h1>
+<h1 class="text-center"><%= t 'events.title' %></h1>
 <div class="row">
   <div class="large-12 large-centered columns">
     <% @events.reject{|e| e.is_over?}.each do |event| %>
@@ -10,20 +10,20 @@
     <% if event.description.present? %>
     <p><%= event.description %></p>
     <% end %>
-    <h3>Attendee Registration</h3>
+    <h3><%= t 'events.attendee_registration'%></h3>
     <p>
       <%= attendee_registration_display(event) %>
       <br>
       <% if event.attendee_reg_open? %>
-        <%= button_to 'Apply Now', new_event_attendee_application_path(event), class: "button tiny radius", method: 'get' %>
+        <%= button_to t('events.submit_apply'), new_event_attendee_application_path(event), class: "button tiny radius", method: 'get' %>
       <% end %>
     </p>
-    <h3>Coach Registration</h3>
+    <h3><%= t 'events.coach_registration' %></h3>
     <p>
       <%= coach_registration_display(event) %>
       <br>
       <% if event.coach_reg_open? %>
-        <%= button_to 'Apply Now', new_event_coach_application_path(event), class: "button tiny radius", method: 'get' %>
+        <%= button_to t('events.submit_apply'), new_event_coach_application_path(event), class: "button tiny radius", method: 'get' %>
       <% end %>
     </p>
     <% end %>

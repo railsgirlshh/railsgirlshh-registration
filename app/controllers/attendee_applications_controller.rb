@@ -6,7 +6,7 @@ class AttendeeApplicationsController < ApplicationController
     if @event.attendee_reg_open?
       @attendee_application = @event.attendee_applications.build
     else
-      redirect_to root_url, notice: 'Attendee application is not open.'
+      redirect_to root_url, notice:  t('notice.attendee.registration_not_open')
     end
   end
 
@@ -15,12 +15,12 @@ class AttendeeApplicationsController < ApplicationController
       @attendee_application = @event.attendee_applications.build(attendee_application_params)
 
       if @attendee_application.save
-        redirect_to root_url, notice: 'Attendee application was successfully created.'
+        redirect_to root_url, notice: t('notice.attendee.registration_successful')
       else
         render :new
       end
     else
-      redirect_to root_url, alert: 'Attendee application is not open.'
+      redirect_to root_url, alert: t('notice.attendee.registration_not_open')
     end
   end
 
@@ -29,9 +29,9 @@ class AttendeeApplicationsController < ApplicationController
 
   def cancel
     if @attendee_application.canceled!
-      redirect_to root_url, notice: 'Your application has been canceled.'
+      redirect_to root_url, notice: t('notice.attendee.registration_canceled')
     else
-      redirect_to root_url, alert: 'Something went wrong when trying to cancel your application.'
+      redirect_to root_url, alert: t('notice.attendee.cancellation_error')
     end
   end
 
@@ -40,14 +40,14 @@ class AttendeeApplicationsController < ApplicationController
   def set_event
     @event = Event.find(params[:event_id])
   rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The event you were looking " +
-                      "for could not be found."
+      flash[:alert] = t('alert.event_not_found')
+
     redirect_to root_path
   end
 
   def set_attendee_application_via_token
     @attendee_application = AttendeeApplication.find_by token: params[:token], event: @event
-    redirect_to root_url, alert: 'We could not finde your application.' unless @attendee_application.present?
+    redirect_to root_url, alert: t('alert.application_not_found') unless @attendee_application.present?
   end
 
   # Only allow a trusted parameter "white list" through.
