@@ -16,6 +16,7 @@ class AttendeeApplicationsController < ApplicationController
 
       if @attendee_application.save
         redirect_to root_url, notice: t('notice.attendee.registration_successful')
+        AttendeeApplicationMailer.welcome_email(@attendee_application).deliver
       else
         render :new
       end

@@ -2,10 +2,10 @@
 
 one:
   event_id: 1
-  first_name: MyString
-  last_name: MyString
-  email: MyString@exampl.com
-  female: false
+  first_name: Ada
+  last_name: Lovelace
+  email: ada@example.com
+  female: true
   application_text: MyText
   prior_experience: MyText
   other_text: MyText
