@@ -63,7 +63,7 @@ de:
   notice:
     attendee:
       registration_not_open: "TeilnehmerInnenanmeldung ist zur Zeit nicht offen."
-      registration_successful: "TeilnehmerInnen Anmeldung erfolgreich abgeschlossen."
+      registration_successful: "Deine Anmeldung wurde entgegengenommen, Du bekommst bald eine E-Mail von uns."
       registration_canceled: "Deine Anmeldung wurde annuliert."
       cancellation_error: "Etwas ist schief gegangen beim annulieren deiner Anmeldung."
     coach:
