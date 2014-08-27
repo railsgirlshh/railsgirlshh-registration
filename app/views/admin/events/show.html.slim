@@ -1,0 +1,31 @@
+p
+  strong
+    | Title:
+  = @event.title
+p
+  strong
+    | Description:
+  = @event.description
+p
+  strong
+    | Event date:
+  = @event.event_date
+p
+  strong
+    | Coach reg start:
+  = @event.coach_reg_start
+p
+  strong
+    | Coach reg end:
+  = @event.coach_reg_end
+p
+  strong
+    | Attendee reg start:
+  = @event.attendee_reg_start
+p
+  strong
+    | Attendee reg end:
+  = @event.attendee_reg_end
+= link_to 'Edit', edit_admin_event_path(@event)
+|  | 
+= link_to 'Back', admin_events_path

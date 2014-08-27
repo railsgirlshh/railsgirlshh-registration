@@ -1,0 +1,30 @@
+- content_for :title do
+  |  Rails Girls Hamburg - Upcoming Events
+h1.text-center
+  = t 'events.title'
+.row
+  .large-12.large-centered.columns
+    - @events.reject {|e| e.is_over?}.each do |event|
+      h2
+        = event.title
+      p
+        | Date:
+        = event.event_date.to_s(:long)
+      - if event.description.present?
+        p
+          = event.description
+      h3
+        = t 'events.attendee_registration'
+      p
+        = attendee_registration_display(event)
+        br
+        - if event.attendee_reg_open?
+          = button_to t('events.submit_apply'), new_event_attendee_application_path(event), class: "button tiny radius", method: 'get'
+      h3
+        = t 'events.coach_registration'
+      p
+        = coach_registration_display(event)
+        br
+        - if event.coach_reg_open?
+          = button_to t('events.submit_apply'), new_event_coach_application_path(event), class: "button tiny radius", method: 'get'
+    hr
