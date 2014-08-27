@@ -36,7 +36,7 @@ en:
   notice:
     attendee:
       registration_not_open: "Attendee application is not open."
-      registration_successful: "Attendee application was successfully created."
+      registration_successful: "Attendee application was successfully created. We've sent an email with some more details."
       registration_canceled: "Your application has been canceled."
       cancellation_error: "Something went wrong when trying to cancel your application."
     coach:

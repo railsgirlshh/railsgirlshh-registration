@@ -49,4 +49,15 @@ class AttendeeApplicationsControllerTest < ActionController::TestCase
 
     assert_redirected_to root_path
   end
+
+  test "should send welcome email when application is created" do
+    assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience }
+    end
+    welcome_email = ActionMailer::Base.deliveries.last
+
+    assert_equal "Rails Girls Hamburg Workshop", welcome_email.subject
+    assert_equal @attendee_application.email, welcome_email.to[0]
+    assert_match(/Hallo Ada/, welcome_email.body.to_s)
+  end
 end
