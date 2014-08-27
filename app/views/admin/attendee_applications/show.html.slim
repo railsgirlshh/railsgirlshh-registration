@@ -1,0 +1,36 @@
+h1
+  | Application for 
+  = @event.title
+h2
+  = @attendee_application.first_name + ' ' + @attendee_application.last_name
+p
+  strong
+    | Status:
+  = @attendee_application.status.humanize
+p
+  strong
+    | Email:
+  = @attendee_application.email
+p
+  strong
+    | Female:
+  = @attendee_application.female
+h3
+  | Application text
+p
+  = @attendee_application.application_text
+h3
+  | Prior experience
+p
+  = @attendee_application.prior_experience
+h3
+  | Other text
+p
+  = @attendee_application.other_text
+h3
+  | Self Care Url
+p
+  = attendee_self_care_url(@attendee_application)
+= link_to 'Edit', edit_admin_event_attendee_application_path(@event, @attendee_application)
+|  | 
+= link_to 'Back', admin_event_attendee_applications_path

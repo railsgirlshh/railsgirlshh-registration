@@ -1,0 +1,40 @@
+= form_for([:admin, @event]) do |f|
+  - if @event.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@event.errors.count, "error")
+        |  prohibited this event from being saved:
+      ul
+        - @event.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :title
+    br
+    = f.text_field :title
+  .field
+    = f.label :description
+    br
+    = f.text_field :description
+  .field
+    = f.label :event_date
+    br
+    = f.date_select :event_date
+  .field
+    = f.label :coach_reg_start
+    br
+    = f.date_select :coach_reg_start, include_blank: true
+  .field
+    = f.label :coach_reg_end
+    br
+    = f.date_select :coach_reg_end, include_blank: true
+  .field
+    = f.label :attendee_reg_start
+    br
+    = f.date_select :attendee_reg_start, include_blank: true
+  .field
+    = f.label :attendee_reg_end
+    br
+    = f.date_select :attendee_reg_end, include_blank: true
+  .actions
+    = f.submit

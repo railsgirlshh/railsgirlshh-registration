@@ -1,0 +1,32 @@
+= form_for([@event, @coach_application]) do |f|
+  - if @coach_application.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@coach_application.errors.count, "error")
+        |  prohibited this coach_application from being saved:
+      ul
+        - @coach_application.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :first_name
+    br
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    br
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    br
+    = f.text_field :email
+  .field
+    = f.label :application_text
+    br
+    = f.text_area :application_text
+  .field
+    = f.label :other_text
+    br
+    = f.text_area :other_text
+  .actions
+    = f.submit t('events.submit_apply'), class: 'button radius small'
