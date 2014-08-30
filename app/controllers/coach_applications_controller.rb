@@ -16,6 +16,8 @@ class CoachApplicationsController < ApplicationController
 
       if @coach_application.save
         redirect_to root_url, notice: t('notice.coach.registration_successful')
+
+        CoachApplicationMailer.welcome_email(@coach_application).deliver
       else
         render :new
       end

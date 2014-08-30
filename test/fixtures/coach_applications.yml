@@ -2,9 +2,9 @@
 
 one:
   event_id: 1
-  first_name: MyString
-  last_name: MyString
-  email: MyString@example.com
+  first_name: Grace
+  last_name: Hopper
+  email: grace@example.com
   application_text: MyText
   other_text: MyText
   status: registered
