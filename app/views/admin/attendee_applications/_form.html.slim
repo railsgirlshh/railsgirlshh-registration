@@ -18,6 +18,7 @@
     = f.text_field :last_name
   .field
     = f.label :status
+    | hier wird kein email Versand ausgeloest!
     br
     = f.select :status, options_for_select(@statuses.collect { |s| [s[0].humanize, s[0]] }, selected: @attendee_application.status)
   .field
