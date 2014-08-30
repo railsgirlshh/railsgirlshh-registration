@@ -57,6 +57,7 @@ module Admin
     def reject
       respond_to do |format|
         if @attendee_application.rejected!
+          AttendeeApplicationMailer.rejected_email(@attendee_application).deliver
           format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully rejected.' }
           format.js   { }
         else

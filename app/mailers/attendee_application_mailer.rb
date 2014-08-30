@@ -10,4 +10,9 @@ class AttendeeApplicationMailer < ActionMailer::Base
     @attendee_application = attendee_application
     mail(to: @attendee_application.email, subject: 'Teilnahme am Rails Girls Hamburg Workshop')
   end
+
+  def rejected_email(attendee_application)
+    @attendee_application = attendee_application
+    mail(to: @attendee_application.email, subject: 'Keine Teilnahme am Rails Girls Hamburg Workshop')
+  end
 end
