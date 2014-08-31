@@ -1,4 +1,5 @@
 class AttendeeApplicationMailer < ActionMailer::Base
+  layout 'email'
   add_template_helper(AttendeeApplicationsHelper)
 
   def welcome_email(attendee_application)
