@@ -15,7 +15,7 @@ h1.text-center
             | Coach reg
           th
             | Attendee reg
-          th[colspan="3"]
+          th[colspan="5"]
       tbody
         - @events.each do |event|
           tr
@@ -30,7 +30,9 @@ h1.text-center
             td
               == "#{event.attendee_reg_start}&nbsp;- #{event.attendee_reg_end}"
             td
-              = link_to 'Show', [:admin, event]
+              = link_to t('.coach_applications'), [:admin, event, :coach_applications]
+            td
+              = link_to t('.attendee_applications'), [:admin, event, :attendee_applications]
             td
               = link_to 'Edit', edit_admin_event_path(event)
             td
