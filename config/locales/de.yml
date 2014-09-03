@@ -72,6 +72,13 @@ de:
       registration_canceled: "Deine Anmeldung wurde anuliert."
       cancellation_error: "Etwas ist schief gelaufen beim anulieren deiner Anmeldung."
 
+
+  admin:
+    events:
+      index:
+        coach_applications: Coach Anmeldungen
+        attendee_applications: TeilnehmerInnen Anmeldung
+
   date:
     abbr_day_names:
     - So

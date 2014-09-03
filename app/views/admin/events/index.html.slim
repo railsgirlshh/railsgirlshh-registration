@@ -12,14 +12,10 @@ h1.text-center
           th
             | Event date
           th
-            | Coach reg start
+            | Coach reg
           th
-            | Coach reg end
-          th
-            | Attendee reg start
-          th
-            | Attendee reg end
-          th[colspan="3"]
+            | Attendee reg
+          th[colspan="5"]
       tbody
         - @events.each do |event|
           tr
@@ -30,15 +26,13 @@ h1.text-center
             td
               = event.event_date
             td
-              = event.coach_reg_start
+              == "#{event.coach_reg_start}&nbsp;- #{event.coach_reg_end}"
             td
-              = event.coach_reg_end
+              == "#{event.attendee_reg_start}&nbsp;- #{event.attendee_reg_end}"
             td
-              = event.attendee_reg_start
+              = link_to t('.coach_applications'), [:admin, event, :coach_applications]
             td
-              = event.attendee_reg_end
-            td
-              = link_to 'Show', [:admin, event]
+              = link_to t('.attendee_applications'), [:admin, event, :attendee_applications]
             td
               = link_to 'Edit', edit_admin_event_path(event)
             td
