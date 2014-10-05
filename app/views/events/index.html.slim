@@ -2,13 +2,15 @@
   |  Rails Girls Hamburg - Upcoming Events
 h1.text-center
   = t 'events.title'
+
 .row
   .large-12.large-centered.columns
+  p
+    = t 'events.hint_html'
     - @events.reject {|e| e.is_over?}.each do |event|
       h2
         = event.title
       p
-        | Date:
         = event.event_date.to_s(:long)
       - if event.description.present?
         p
@@ -23,8 +25,10 @@ h1.text-center
       h3
         = t 'events.coach_registration'
       p
+        = t 'events.coach_hint'
+      p
         = coach_registration_display(event)
         br
         - if event.coach_reg_open?
-          = button_to t('events.submit_apply'), new_event_coach_application_path(event), class: "button tiny radius", method: 'get'
+          = button_to t('events.submit_register'), new_event_coach_application_path(event), class: "button tiny radius", method: 'get'
     hr
