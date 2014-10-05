@@ -6,6 +6,7 @@ one:
   last_name: Lovelace
   email: ada@example.com
   female: true
+  age: 19
   application_text: MyText
   prior_experience: MyText
   other_text: MyText
@@ -18,6 +19,7 @@ two:
   last_name: MyString
   email: MyString@exampl.com
   female: false
+  age: 21
   application_text: MyText
   prior_experience: MyText
   other_text: MyText

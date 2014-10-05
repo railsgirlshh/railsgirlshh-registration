@@ -32,13 +32,18 @@ module AttendeeApplicationTest
     end
 
     test "should save attendee application with full data" do
-      attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', female: true, prior_experience: 'django', application_text: 'I want to learn rails', other_text: 'foo bar', status: 'rejected')
+      attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', age: 18, email: 'foo@example.com', female: true, prior_experience: 'django', application_text: 'I want to learn rails', other_text: 'foo bar', status: 'rejected')
       assert attendee_application.save, "Did not save the attendee application with full data"
     end
 
     test "should not save without valid email" do
       attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', email: 'fooexample.com')
       assert_not attendee_application.save, "Saved the attendee application without valid email"
+    end
+
+    test "should not save with invalid age" do
+      attendee_application = @event.attendee_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', age: 'xxx')
+      assert_not attendee_application.save, "Saved the attendee application without invalid age"
     end
   end
 end

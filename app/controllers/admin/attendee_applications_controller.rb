@@ -87,7 +87,7 @@ module Admin
 
     # Only allow a trusted parameter "white list" through.
     def attendee_application_params
-      params.require(:attendee_application).permit(:event_id, :first_name, :last_name, :email, :female, :application_text, :prior_experience, :other_text, :status)
+      params.require(:attendee_application).permit(:event_id, :first_name, :last_name, :email, :age, :female, :application_text, :prior_experience, :other_text, :status)
     end
   end
 end

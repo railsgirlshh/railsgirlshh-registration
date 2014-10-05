@@ -25,6 +25,7 @@ de:
     last_name: &last_name "Nachname"
     email: &email "Email"
     female: &female "weiblich"
+    age: &age "Alter"
     application_text: &application_text "Bewerbungstext"
     prior_experience: &prior_experience "Vorerfahrung"
     other_text: &other_text "Weiteres"
@@ -35,6 +36,7 @@ de:
         first_name: *first_name
         last_name: *last_name
         email: *email
+        age: *age
         female: *female
         application_text: *application_text
         prior_experience: *prior_experience
