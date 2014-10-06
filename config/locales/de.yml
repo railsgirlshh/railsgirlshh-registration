@@ -70,16 +70,23 @@ de:
 
   notice:
     attendee:
-      registration_not_open: "TeilnehmerInnenanmeldung ist zur Zeit nicht offen."
-      registration_successful: "Deine Anmeldung wurde entgegengenommen, Du bekommst bald eine E-Mail von uns."
-      registration_canceled: "Deine Anmeldung wurde annuliert."
-      cancellation_error: "Etwas ist schief gegangen beim annulieren deiner Anmeldung."
+      registration_not_open: "Bewerbungen werden derzeit nicht entgegengenommen."
+      registration_successful: "Deine Bewerbung wurde entgegengenommen, Du bekommst bald eine E-Mail von uns."
+      registration_canceled: "Du hast Deine Bewerbung zurückgezogen."
+      cancellation_error: "Da hat leider nicht geklappt."
     coach:
-      registration_not_open: "Coach Anmeldung nicht offen."
-      registration_successful: "Coach Anmeldung erfolgreich abgeschlossen."
-      registration_canceled: "Deine Anmeldung wurde anuliert."
-      cancellation_error: "Etwas ist schief gelaufen beim anulieren deiner Anmeldung."
+      registration_not_open: "Anmeldung als Coach derzeit nicht möglich."
+      registration_successful: "Du bist jetzt als Coach angemeldet."
+      registration_canceled: "Deine Anmeldung wurde storniert."
+      cancellation_error: "Das hat leider nicht geklappt."
 
+  attendee_applications:
+    application: "Bewerbung"
+    your_age: "Wie alt bist Du?"
+    your_application: "Erzähl uns etwas über Deine Motivation - warum möchtest Du an der Veranstaltung teilnehmen?"
+    your_experience: "Hast Du schon mal versucht, etwas zu programmieren oder eine Webseite zu gestalten? Wenn ja, was? Bei der Veranstaltung werden keine Programmierkenntnisse vorausgesetzt."
+    your_other: "Gibt es sonst noch etwas, das Du uns mitteilen möchtest?"
+    your_gender: "Bist Du eine Frau* ? Dann markiere diese Checkbox."
 
   admin:
     events:

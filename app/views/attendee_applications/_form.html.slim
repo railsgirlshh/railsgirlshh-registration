@@ -10,35 +10,27 @@
             = message
   .field
     = f.label :first_name
-    br
     = f.text_field :first_name
   .field
     = f.label :last_name
-    br
     = f.text_field :last_name
   .field
     = f.label :email
-    br
     = f.text_field :email
   .field
-    = f.label :age
-    br
+    = f.label :age, "#{t 'attendee_applications.your_age'}"
     = f.text_field :age
   .field
-    = f.label :female
-    br
     = f.check_box :female
+    = f.label :female, "#{t 'attendee_applications.your_gender'}"
   .field
-    = f.label :application_text
-    br
-    = f.text_area :application_text
+    = f.label :application_text, "#{t 'attendee_applications.your_application'}"
+    = f.text_area :application_text, rows: 15
   .field
-    = f.label :prior_experience
-    br
-    = f.text_area :prior_experience
+    = f.label :prior_experience, "#{t 'attendee_applications.your_experience'}"
+    = f.text_area :prior_experience, rows: 15
   .field
-    = f.label :other_text
-    br
-    = f.text_area :other_text
+    = f.label :other_text, "#{t 'attendee_applications.your_other'}"
+    = f.text_area :other_text, rows: 15
   .actions
     = f.submit t('events.submit_apply'), class: 'button radius small'
