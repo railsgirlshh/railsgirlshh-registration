@@ -90,6 +90,7 @@ de:
     your_gender: "Bist Du eine Frau* ? Dann markiere diese Checkbox."
 
   coach_applications:
+    application: "Anmeldung"
     coach_dinner_participation: "Ich nehme am Coachdinner teil."
 
   admin:
