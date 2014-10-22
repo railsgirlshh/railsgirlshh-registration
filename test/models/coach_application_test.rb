@@ -32,7 +32,7 @@ module CoachApplicationTest
     end
 
     test "should save coach application with full data" do
-      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', application_text: 'I want to learn rails', other_text: 'foo bar', status: 'registered')
+      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', application_text: 'I want to learn rails', other_text: 'foo bar', status: 'registered', coachdinner: true)
       assert coach_application.save, "Did not save the coach application with full data"
     end
 

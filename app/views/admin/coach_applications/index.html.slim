@@ -12,6 +12,8 @@ table
       th
         | Email
       th
+        | Coachdinner
+      th
         | Status
       th[colspan="3"]
   tbody
@@ -23,6 +25,8 @@ table
           = coach_application.last_name
         td
           = coach_application.email
+        td
+          = coach_application.coachdinner ? 'JA' : 'NEIN'
         td
           | <span id="status-
           = coach_application.id

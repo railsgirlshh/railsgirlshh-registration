@@ -20,6 +20,10 @@ h3
 p
   = @coach_application.other_text
 h3
+  | Coachdinner
+p
+  = @coach_application.coachdinner ? "JA" : "NEIN"
+h3
   | Self Care Url
 p
   = coach_self_care_url(@coach_application)

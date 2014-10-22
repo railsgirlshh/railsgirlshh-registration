@@ -53,6 +53,6 @@ class CoachApplicationsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def coach_application_params
-    params.require(:coach_application).permit(:event_id, :first_name, :last_name, :email, :application_text, :other_text)
+    params.require(:coach_application).permit(:event_id, :first_name, :last_name, :email, :application_text, :other_text, :coachdinner)
   end
 end

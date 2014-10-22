@@ -7,6 +7,7 @@ one:
   email: grace@example.com
   application_text: MyText
   other_text: MyText
+  coachdinner: true
   status: registered
   token: 123asdf
 
@@ -17,5 +18,6 @@ two:
   email: MyString@example.com
   application_text: MyText
   other_text: MyText
+  coachdinner: true
   status: canceled
   token: 321gfdsa

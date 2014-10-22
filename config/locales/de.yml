@@ -29,6 +29,7 @@ de:
     application_text: &application_text "Bewerbungstext"
     prior_experience: &prior_experience "Vorerfahrung"
     other_text: &other_text "Weiteres"
+    coachdinner: &coachdinner "Coachdinner"
 
   activerecord:
     attributes:
@@ -45,7 +46,7 @@ de:
         first_name: *first_name
         last_name: *last_name
         email: *email
-        female: *female
+        coachdinner: *coachdinner
         application_text: *application_text
         prior_experience: *prior_experience
         other_text: *other_text
@@ -87,6 +88,9 @@ de:
     your_experience: "Hast Du schon mal versucht, etwas zu programmieren oder eine Webseite zu gestalten? Wenn ja, was? Bei der Veranstaltung werden keine Programmierkenntnisse vorausgesetzt."
     your_other: "Gibt es sonst noch etwas, das Du uns mitteilen möchtest?"
     your_gender: "Bist Du eine Frau* ? Dann markiere diese Checkbox."
+
+  coach_applications:
+    coach_dinner_participation: "Ich nehme am Coachdinner teil."
 
   admin:
     events:
