@@ -5,7 +5,6 @@ one:
   first_name: Grace
   last_name: Hopper
   email: grace@example.com
-  application_text: MyText
   other_text: MyText
   coachdinner: true
   status: registered
@@ -16,7 +15,6 @@ two:
   first_name: MyString
   last_name: MyString
   email: MyString@example.com
-  application_text: MyText
   other_text: MyText
   coachdinner: true
   status: canceled

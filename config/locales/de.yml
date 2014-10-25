@@ -47,7 +47,6 @@ de:
         last_name: *last_name
         email: *email
         coachdinner: *coachdinner
-        application_text: *application_text
         prior_experience: *prior_experience
         other_text: *other_text
   alert:

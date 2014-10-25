@@ -13,7 +13,7 @@ class CoachApplicationsControllerTest < ActionController::TestCase
 
   test "should create coach_application" do
     assert_difference('CoachApplication.count') do
-      post :create, event_id: @coach_application.event_id, coach_application: { application_text: @coach_application.application_text, email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner }
+      post :create, event_id: @coach_application.event_id, coach_application: { email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner }
     end
 
     assert_redirected_to root_path
@@ -31,7 +31,7 @@ class CoachApplicationsControllerTest < ActionController::TestCase
     @event.save
 
     assert_no_difference('CoachApplication.count') do
-      post :create, event_id: @coach_application.event_id, coach_application: { application_text: @coach_application.application_text, email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner}
+      post :create, event_id: @coach_application.event_id, coach_application: { email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner}
     end
 
     assert_redirected_to root_path
@@ -52,7 +52,7 @@ class CoachApplicationsControllerTest < ActionController::TestCase
 
   test "should send welcome email when application is created" do
     assert_difference 'ActionMailer::Base.deliveries.size', +1 do
-      post :create, event_id: @coach_application.event_id, coach_application: { application_text: @coach_application.application_text, email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner}
+      post :create, event_id: @coach_application.event_id, coach_application: { email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner}
     end
     welcome_email = ActionMailer::Base.deliveries.last
 
