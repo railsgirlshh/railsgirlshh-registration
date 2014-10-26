@@ -11,7 +11,7 @@ h1.text-center
       h2
         = event.title
       p
-        = event.event_date.to_s(:long)
+        = l event.event_date, format: :long
       - if event.description.present?
         p
           = event.description
