@@ -1,6 +1,6 @@
 Hallo Ada
 
-cancel url http://localhost:3000/events/1/attendee_applications/self_care/123asdf 
+cancel url http://localhost:3000/a/123asdf 
 
 Herzliche Grüße
 Rails Girls Hamburg

@@ -1,6 +1,6 @@
 Hallo Grace
 
-cancel url http://localhost:3000/events/1/coach_applications/self_care/123asdf 
+cancel url http://localhost:3000/c/123asdf 
 
 Herzliche Grüße
 Rails Girls Hamburg

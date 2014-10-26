@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     resources  :coach_applications, only: [:new, :create]
   end
 
-  get 'events/:event_id/attendee_applications/self_care/:token', to: 'attendee_applications#self_care'
+  get 'a/:token', to: 'attendee_applications#self_care'
   post 'events/:event_id/attendee_applications/cancel/:token', to: 'attendee_applications#cancel'
-  get 'events/:event_id/coach_applications/self_care/:token', to: 'coach_applications#self_care'
+  get 'c/:token', to: 'coach_applications#self_care'
   post 'events/:event_id/coach_applications/cancel/:token', to: 'coach_applications#cancel'
 
   namespace :admin do

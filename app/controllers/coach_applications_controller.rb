@@ -1,5 +1,5 @@
 class CoachApplicationsController < ApplicationController
-  before_action :set_event
+  before_action :set_event, except: [:self_care]
   before_action :set_coach_application_via_token, only: [:self_care, :cancel]
 
   def new
@@ -47,8 +47,9 @@ class CoachApplicationsController < ApplicationController
   end
 
   def set_coach_application_via_token
-    @coach_application = CoachApplication.find_by token: params[:token], event: @event
+    @coach_application = CoachApplication.find_by token: params[:token]
     redirect_to root_url, alert: t('alert.application_not_found') unless @coach_application.present?
+    @event = @coach_application.event
   end
 
   # Only allow a trusted parameter "white list" through.

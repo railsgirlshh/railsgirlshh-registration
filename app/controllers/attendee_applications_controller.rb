@@ -1,6 +1,7 @@
 class AttendeeApplicationsController < ApplicationController
-  before_action :set_event
+  before_action :set_event, except: [:self_care]
   before_action :set_attendee_application_via_token, only: [:self_care, :cancel]
+
 
   def new
     if @event.attendee_reg_open?
@@ -47,8 +48,9 @@ class AttendeeApplicationsController < ApplicationController
   end
 
   def set_attendee_application_via_token
-    @attendee_application = AttendeeApplication.find_by token: params[:token], event: @event
+    @attendee_application = AttendeeApplication.find_by token: params[:token]
     redirect_to root_url, alert: t('alert.application_not_found') unless @attendee_application.present?
+    @event = @attendee_application.event
   end
 
   # Only allow a trusted parameter "white list" through.
