@@ -1,5 +1,10 @@
-h1
-  = t 'attendee_applications.application'
 .row
+  .small-8
+    h1
+      = t 'attendee_applications.application'
+    p
+      = @event.title
+    p
+      = l @event.event_date, format: :long
   .small-6
-    = render 'form'
+      = render 'form'

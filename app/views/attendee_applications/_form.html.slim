@@ -10,27 +10,27 @@
             = message
   .field
     = f.label :first_name
-    = f.text_field :first_name
+    = f.text_field :first_name, maxlength: 80
   .field
     = f.label :last_name
-    = f.text_field :last_name
+    = f.text_field :last_name, maxlength: 80
   .field
     = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :age, "#{t 'attendee_applications.your_age'}"
-    = f.text_field :age
+    = f.text_field :email, maxlength: 80
+  .field.small-1
+    = f.label :age
+    = f.text_field :age, maxlength: 2
   .field
     = f.check_box :female
     = f.label :female, "#{t 'attendee_applications.your_gender'}"
   .field
-    = f.label :application_text, "#{t 'attendee_applications.your_application'}"
-    = f.text_area :application_text, rows: 15
+    = f.label :application_text
+    = f.text_area :application_text, rows: 15, placeholder: "#{t 'attendee_applications.your_application'}"
   .field
-    = f.label :prior_experience, "#{t 'attendee_applications.your_experience'}"
-    = f.text_area :prior_experience, rows: 15
+    = f.label :prior_experience
+    = f.text_area :prior_experience, rows: 10, placeholder: "#{t 'attendee_applications.your_experience'}"
   .field
-    = f.label :other_text, "#{t 'attendee_applications.your_other'}"
-    = f.text_area :other_text, rows: 15
+    = f.label :other_text
+    = f.text_area :other_text, rows: 10, placeholder: "#{t 'attendee_applications.your_other'}"
   .actions
     = f.submit t('events.submit_apply'), class: 'button radius small'
