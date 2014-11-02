@@ -7,7 +7,7 @@ module EventTest
     end
 
     test "should save event with full data" do
-      event = Event.new(title: 'Summer workshop', description: 'Most awesome workshop ever', event_date: Date.today+5, coach_reg_start: Date.today+3, coach_reg_end: Date.today+4, attendee_reg_start: Date.today+3, attendee_reg_end: Date.today+4)
+      event = Event.new(title: 'Summer workshop', description: 'Most awesome workshop ever', event_date: Date.today+5, coach_dinner_date: Date.today+4, coach_reg_start: Date.today+3, coach_reg_end: Date.today+4, attendee_reg_start: Date.today+3, attendee_reg_end: Date.today+4)
       assert event.save, "Saved event with title and event date only"
     end
 
@@ -41,6 +41,11 @@ module EventTest
       event.save
       event.event_date= Date.today-2
       assert event.save, "Updated the event with event date in the past"
+    end
+
+    test "should not create event with coach dinner date in the past"  do
+      event = Event.new(title: 'Summer workshop', event_date: Date.today+5, coach_dinner_date: Date.today-2)
+      assert_not event.save, "Created the event with coach dinner date in the past"
     end
   end
 

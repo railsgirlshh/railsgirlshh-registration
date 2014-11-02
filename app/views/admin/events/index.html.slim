@@ -12,6 +12,8 @@ h1.text-center
           th
             | Event date
           th
+            | Coach dinner date
+          th
             | Coach reg
           th
             | Attendee reg
@@ -25,6 +27,8 @@ h1.text-center
               = event.description
             td
               = event.event_date
+            td
+              = event.coach_dinner_date
             td
               == "#{event.coach_reg_start}&nbsp;- #{event.coach_reg_end}"
             td

@@ -9,6 +9,7 @@ past_event:
   title: Past Workshop
   description: MyString
   event_date: 2014-05-07
+  coach_dinner_date: 2014-05-04
   coach_reg_start: 2014-04-07
   coach_reg_end: 2014-04-30
   attendee_reg_start: 2014-04-07

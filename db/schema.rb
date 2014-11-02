@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025204727) do
+ActiveRecord::Schema.define(version: 20141102204243) do
 
   create_table "admin_accounts", force: true do |t|
     t.string   "username"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20141025204727) do
     t.date     "attendee_reg_end"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "coach_dinner_date"
   end
 
 end

@@ -54,7 +54,7 @@ module Admin
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:title, :description, :event_date, :coach_reg_start, :coach_reg_end, :attendee_reg_start, :attendee_reg_end)
+      params.require(:event).permit(:title, :description, :event_date, :coach_dinner_date, :coach_reg_start, :coach_reg_end, :attendee_reg_start, :attendee_reg_end)
     end
   end
 end

@@ -21,6 +21,10 @@
     br
     = f.date_select :event_date
   .field
+    = f.label :coach_dinner_date
+    br
+    = f.date_select :coach_dinner_date, include_blank: true
+  .field
     = f.label :coach_reg_start
     br
     = f.date_select :coach_reg_start, include_blank: true

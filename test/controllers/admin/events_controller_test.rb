@@ -19,7 +19,7 @@ module Admin
 
     test "should create event" do
       assert_difference('Event.count') do
-        post :create, event: { attendee_reg_end: @event.attendee_reg_end, attendee_reg_start: @event.attendee_reg_start, coach_reg_end: @event.coach_reg_end, coach_reg_start: @event.coach_reg_start, description: @event.description, event_date: @event.event_date, title: @event.title }
+        post :create, event: { attendee_reg_end: @event.attendee_reg_end, attendee_reg_start: @event.attendee_reg_start, coach_reg_end: @event.coach_reg_end, coach_reg_start: @event.coach_reg_start, description: @event.description, event_date: @event.event_date, title: @event.title, coach_dinner_date: @event.coach_dinner_date }
       end
 
       assert_redirected_to admin_event_path(assigns(:event))
@@ -36,7 +36,7 @@ module Admin
     end
 
     test "should update event" do
-      patch :update, id: @event, event: { attendee_reg_end: @event.attendee_reg_end, attendee_reg_start: @event.attendee_reg_start, coach_reg_end: @event.coach_reg_end, coach_reg_start: @event.coach_reg_start, description: @event.description, event_date: @event.event_date, title: @event.title }
+      patch :update, id: @event, event: { attendee_reg_end: @event.attendee_reg_end, attendee_reg_start: @event.attendee_reg_start, coach_reg_end: @event.coach_reg_end, coach_reg_start: @event.coach_reg_start, description: @event.description, event_date: @event.event_date, title: @event.title, coach_dinner_date: @event.coach_dinner_date }
       assert_redirected_to admin_event_path(assigns(:event))
     end
 

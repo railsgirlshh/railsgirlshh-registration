@@ -90,7 +90,7 @@ de:
 
   coach_applications:
     application: "Anmeldung"
-    coach_dinner_participation: "Ich nehme am Coachdinner teil."
+    coach_dinner_participation: "Ich nehme am Coachdinner am %{coach_dinner_date} teil."
 
   admin:
     events:

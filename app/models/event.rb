@@ -3,14 +3,16 @@ class Event < ActiveRecord::Base
   has_many :coach_applications
   validates_presence_of :title, :event_date
 
-  validates_each :coach_reg_start, :coach_reg_end, :attendee_reg_start, :attendee_reg_end do |record, attr, value|
+  validates_each :coach_reg_start, :coach_reg_end, :attendee_reg_start, :attendee_reg_end, :coach_dinner_date do |record, attr, value|
     record.errors.add(attr, 'must be before event date') if value.present? && value > record.event_date
   end
 
   validate :coach_reg_end_after_start
   validate :attendee_reg_end_after_start
 
-  validate :event_in_the_future, on: :create
+  validates_each :event_date, :coach_dinner_date, on: :create do |record, attr, value|
+    record.errors.add(attr, "must be in the future") if value.present? && value < Date.today 
+  end
 
   def is_over?
     event_date < Date.today
@@ -38,11 +40,6 @@ class Event < ActiveRecord::Base
     return false if end_date < Date.today
     return true if start_date.blank?
     start_date <= Date.today
-  end
-
-  def event_in_the_future
-    return if event_date.blank?
-    errors.add(:event_date, "must be in the future") if event_date < Date.today 
   end
 
   def coach_reg_end_after_start
