@@ -11,33 +11,38 @@ module CoachApplicationTest
     end
 
     test "should not save coach application without last name" do
-      coach_application = @event.coach_applications.build(first_name: 'Foo', email: 'foo@example.com')
+      coach_application = @event.coach_applications.build(first_name: 'Foo', email: 'foo@example.com', coc: "1")
       assert_not coach_application.save, "Saved the coach application without a last name"
     end
 
     test "should not save coach application without email" do
-      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar')
+      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', coc: "1")
       assert_not coach_application.save, "Saved the coach application without email"
     end
 
+    test "should not save coach application without coc acceptance" do
+      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com')
+      assert_not coach_application.save, "Saved the coach application without coc acceptance"
+    end
+
     test "should not save coach application without event association" do
-      coach_application = CoachApplication.new(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com')
+      coach_application = CoachApplication.new(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', coc: "1")
       assert_not coach_application.save, "Saved the coach application without event association"
     end
 
     test "should save coach application with mandatory data and set default status" do
-      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com')
+      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', coc: "1")
       assert coach_application.save, "Did not save the coach application with mandatory data"
       assert_equal "registered", coach_application.status, "did not set default status"
     end
 
     test "should save coach application with full data" do
-      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', other_text: 'foo bar', status: 'registered', coachdinner: true)
+      coach_application = @event.coach_applications.create(first_name: 'Foo', last_name: 'bar', email: 'foo@example.com', other_text: 'foo bar', status: 'registered', coachdinner: true, coc: "1")
       assert coach_application.save, "Did not save the coach application with full data"
     end
 
     test "should not save without valid email" do
-      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'fooexample.com')
+      coach_application = @event.coach_applications.build(first_name: 'Foo', last_name: 'bar', email: 'fooexample.com', coc: "1")
       assert_not coach_application.save, "Saved the coach application without valid email"
     end
   end

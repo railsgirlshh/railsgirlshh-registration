@@ -6,6 +6,7 @@ class CoachApplication < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :email, :event
   validates_uniqueness_of :token
   validates_format_of :email, :with => /@/
+  validates_acceptance_of :coc, allow_nil: false, on: :create
 
   enum status: [ :registered, :canceled ]
 end

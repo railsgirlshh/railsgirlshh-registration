@@ -32,5 +32,8 @@
   .field
     = f.label :other_text
     = f.text_area :other_text, rows: 10, placeholder: "#{t 'attendee_applications.your_other'}"
+  .field
+    = f.check_box :coc
+    = f.label :coc, "#{t 'applications.coc_html'}".html_safe
   .actions
     = f.submit t('events.submit_apply'), class: 'button radius small'

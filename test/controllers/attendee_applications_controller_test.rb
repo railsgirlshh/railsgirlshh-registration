@@ -13,7 +13,7 @@ class AttendeeApplicationsControllerTest < ActionController::TestCase
 
   test "should create attendee_application" do
     assert_difference('AttendeeApplication.count') do
-      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female, age: @attendee_application.age, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience }
+      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female, age: @attendee_application.age, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience, coc: 1 }
     end
 
     assert_redirected_to root_path
@@ -31,7 +31,7 @@ class AttendeeApplicationsControllerTest < ActionController::TestCase
     @event.save
 
     assert_no_difference('AttendeeApplication.count') do
-      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female,  age: @attendee_application.age, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience }
+      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female,  age: @attendee_application.age, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience, coc: 1 }
     end
 
     assert_redirected_to root_path
@@ -52,7 +52,7 @@ class AttendeeApplicationsControllerTest < ActionController::TestCase
 
   test "should send welcome email when application is created" do
     assert_difference 'ActionMailer::Base.deliveries.size', +1 do
-      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female,  age: @attendee_application.age, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience }
+      post :create, event_id: @attendee_application.event_id, attendee_application: { application_text: @attendee_application.application_text, email: @attendee_application.email, event_id: @attendee_application.event_id, female: @attendee_application.female,  age: @attendee_application.age, first_name: @attendee_application.first_name, last_name: @attendee_application.last_name, other_text: @attendee_application.other_text, prior_experience: @attendee_application.prior_experience, coc: 1 }
     end
     welcome_email = ActionMailer::Base.deliveries.last
 

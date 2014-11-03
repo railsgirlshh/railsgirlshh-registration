@@ -7,6 +7,7 @@ class AttendeeApplication < ActiveRecord::Base
   validates_uniqueness_of :token
   validates_format_of :email, :with => /@/
   validates :age, numericality: { only_integer: true }, allow_nil: true
+  validates_acceptance_of :coc, allow_nil: false, on: :create
 
   enum status: [ :open, :accepted, :rejected, :on_waiting_list, :canceled ]
 end

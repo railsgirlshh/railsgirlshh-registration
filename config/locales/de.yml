@@ -92,6 +92,9 @@ de:
     coach_dinner_participation: "Ich nehme am Coachdinner am %{coach_dinner_date} teil."
     your_other: "Gibt es sonst noch etwas, das Du uns mitteilen möchtest?"
 
+  applications:
+    coc_html: "Ich akzeptiere den <a href='http://rubyberlin.github.io/code-of-conduct'>Code of Conduct</a>."
+
   admin:
     events:
       index:

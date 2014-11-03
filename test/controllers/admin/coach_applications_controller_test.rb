@@ -20,7 +20,7 @@ module Admin
 
     test "should create coach_application" do
       assert_difference('CoachApplication.count') do
-        post :create, event_id: @event.id, coach_application: { email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: true, status: @coach_application.status }
+        post :create, event_id: @event.id, coach_application: { email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: true, status: @coach_application.status, coc: 1 }
       end
 
       assert_redirected_to admin_event_coach_application_path(@event, assigns(:coach_application))

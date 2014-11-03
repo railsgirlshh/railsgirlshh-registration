@@ -25,6 +25,10 @@
     .field
       = f.check_box :coachdinner
       = f.label :coachdinner, "#{t 'coach_applications.coach_dinner_participation', coach_dinner_date: l(@event.coach_dinner_date, format: :long)}"
+      br
+  .field
+    = f.check_box :coc
+    = f.label :coc, "#{t 'applications.coc_html'}".html_safe
   .actions
     = f.submit t('events.submit_apply'), class: 'button radius small'
 
