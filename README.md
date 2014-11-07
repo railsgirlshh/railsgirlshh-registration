@@ -1,10 +1,12 @@
-== README
+# README
 
-{<img src="https://travis-ci.org/railsgirlshh/railsgirlshh-registration.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/railsgirlshh/railsgirlshh-registration]
+[<img src="https://travis-ci.org/railsgirlshh/railsgirlshh-registration.svg?branch=master" alt="Build Status" />](https://travis-ci.org/railsgirlshh/railsgirlshh-registration)
+
+[ ![Codeship Status for railsgirlshh/railsgirlshh-registration](https://codeship.io/projects/5c35dfd0-48f8-0132-c0fe-2661e82857fb/status)](https://codeship.io/projects/46052)
 
 Rails Girls Hamburg - attendee application and coach registration
 
-=== Setup
+## Setup
 
 * Rails 4 application, Ruby 2.1.1
 
