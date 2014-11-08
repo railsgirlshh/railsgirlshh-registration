@@ -8,8 +8,6 @@ Rails Girls Hamburg - attendee application and coach registration
 
 ## Setup
 
-* Rails 4 application, Ruby 2.1.1
-
 * In order to send emails, set the environment variables EMAIL_PASSWORD to our email password
 
 * Set the environment variable MY_DOMAIN to the domain where the application is run
