@@ -14,3 +14,6 @@ Rails Girls Hamburg - attendee application and coach registration
 
 * Create an admin account on the console: AdminAccount.create(username: "foo", password_sha1: Digest::SHA1.hexdigest("bar"))
 
+## Staging
+
+* we continously deploy this repo's master branch to our staging environment
