@@ -13,3 +13,5 @@ test:
   <<: *default
   database: railsgirlshh_reg_test
 
+production:
+  adapter: postgresql
