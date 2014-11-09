@@ -59,7 +59,7 @@ Rails.application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile += %w( events.js attendee_applications.js events.css attendee_applications.css scaffolds.css foundation_and_overrides.css )
+  config.assets.precompile += %w( events.js attendee_applications.js events.css attendee_applications.css scaffolds.css foundation_and_overrides.css vendor/modernizr.js)
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
