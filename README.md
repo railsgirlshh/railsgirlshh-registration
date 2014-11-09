@@ -16,4 +16,4 @@ Rails Girls Hamburg - attendee application and coach registration
 
 ## Staging
 
-* we continously deploy this repo's master branch to our staging environment
+* we continously deploy this repo's master branch to our staging environment https://damp-shelf-5878.herokuapp.com/
