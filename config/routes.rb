@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get '/admin' => redirect('/admin/events')
 
+  get '*path' => redirect('/') unless Rails.env.development?
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
