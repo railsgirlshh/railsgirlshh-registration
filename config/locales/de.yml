@@ -94,6 +94,10 @@ de:
 
   applications:
     coc_html: "Ich akzeptiere den <a href='http://rubyberlin.github.io/code-of-conduct'>Code of Conduct</a>."
+    cancel_headline: "Teilnahme absagen"
+    cancel_button: "Ja, Teilnahme absagen"
+    cancel_cancel: "Abbrechen"
+    cancel_question: "Möchtest Du Deine Teilnahme an der Veranstaltung absagen?"
 
   admin:
     events:

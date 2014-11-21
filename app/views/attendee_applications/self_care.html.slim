@@ -1,9 +1,8 @@
 h1
-  |  Cancel your Application 
+  = t 'applications.cancel_headline'
 p
-  |  You have applied for 
   = @event.title
 p
-  |  Do you really want to cancel your application? 
-= button_to "Yes, cancel my application", { action: "cancel", event_id: @event.id, token: @attendee_application.token }, class: 'button tiny radius'
-= link_to 'No thanks, get me out of here', root_url
+  =  t 'applications.cancel_question' 
+= button_to t('applications.cancel_button'), { action: "cancel", event_id: @event.id, token: @attendee_application.token }, class: 'button tiny radius'
+= link_to t('applications.cancel_cancel'), root_url
