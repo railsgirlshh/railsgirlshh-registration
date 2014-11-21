@@ -1,8 +1,10 @@
-h1
-  = t 'applications.cancel_headline'
-p
-  = @event.title
-p
-  =  t 'applications.cancel_question' 
-= button_to t('applications.cancel_button'), { action: "cancel", event_id: @event.id, token: @attendee_application.token }, class: 'button tiny radius'
-= link_to t('applications.cancel_cancel'), root_url
+.row
+  .small-8
+    h1
+      = t 'applications.cancel_headline'
+    p
+      = @event.title
+    p
+      =  t 'applications.cancel_question' 
+    = button_to t('applications.cancel_button'), { action: "cancel", event_id: @event.id, token: @attendee_application.token }, class: 'button tiny radius'
+    = link_to t('applications.cancel_cancel'), root_url
