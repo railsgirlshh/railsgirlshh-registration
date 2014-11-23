@@ -1,6 +1,6 @@
 class CoachApplicationsController < ApplicationController
   before_action :set_event, except: [:self_care]
-  before_action :set_coach_application_via_token, only: [:self_care, :cancel]
+  before_action :set_coach_application_via_token, only: [:self_care, :cancel, :cancel_dinner, :join_dinner]
 
   def new
     if @event.coach_reg_open?
@@ -32,6 +32,22 @@ class CoachApplicationsController < ApplicationController
   def cancel
     if @coach_application.canceled!
       redirect_to root_url, notice: t('notice.coach.registration_canceled')
+    else
+      redirect_to root_url, alert: t('notice.coach.cancellation_error')
+    end
+  end
+
+  def cancel_dinner
+    if @coach_application.update(coachdinner: false)
+      redirect_to root_url, notice: t('notice.coach.dinner_canceled')
+    else
+      redirect_to root_url, alert: t('notice.coach.cancellation_error')
+    end
+  end
+
+  def join_dinner
+    if @coach_application.update(coachdinner: true)
+      redirect_to root_url, notice: t('notice.coach.dinner_joined')
     else
       redirect_to root_url, alert: t('notice.coach.cancellation_error')
     end

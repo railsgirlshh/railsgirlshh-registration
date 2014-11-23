@@ -50,6 +50,23 @@ class CoachApplicationsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
+  test "should cancel coachdinner participation" do
+    assert_difference('CoachApplication.where(coachdinner: false).count') do
+      post :cancel_dinner, event_id: @event.id, token: @coach_application.token
+    end
+
+    assert_redirected_to root_path
+  end
+
+  test "should join coachdinner" do
+    @coach_application.update(coachdinner: false)
+    assert_difference('CoachApplication.where(coachdinner: true).count') do
+      post :join_dinner, event_id: @event.id, token: @coach_application.token
+    end
+
+    assert_redirected_to root_path
+  end
+
   test "should send welcome email when application is created" do
     assert_difference 'ActionMailer::Base.deliveries.size', +1 do
       post :create, event_id: @coach_application.event_id, coach_application: { email: @coach_application.email, event_id: @coach_application.event_id, first_name: @coach_application.first_name, last_name: @coach_application.last_name, other_text: @coach_application.other_text, coachdinner: @coach_application.coachdinner, coc: 1}

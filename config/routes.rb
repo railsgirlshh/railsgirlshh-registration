@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'events/:event_id/attendee_applications/cancel/:token', to: 'attendee_applications#cancel'
   get 'c/:token', to: 'coach_applications#self_care'
   post 'events/:event_id/coach_applications/cancel/:token', to: 'coach_applications#cancel'
+  post 'events/:event_id/coach_applications/cancel_dinner/:token', to: 'coach_applications#cancel_dinner'
+  post 'events/:event_id/coach_applications/join_dinner/:token', to: 'coach_applications#join_dinner'
 
   namespace :admin do
     resources :events do
