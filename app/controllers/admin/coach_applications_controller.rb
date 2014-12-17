@@ -52,14 +52,6 @@ module Admin
       @statuses = CoachApplication.statuses
     end
 
-    def set_event
-      @event = Event.find(params[:event_id])
-    rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The event you were looking " +
-        "for could not be found."
-      redirect_to root_path
-    end
-
     # Only allow a trusted parameter "white list" through.
     def coach_application_params
       params.require(:coach_application).permit(:event_id, :first_name, :last_name, :email, :other_text, :status, :coachdinner, :coc)
