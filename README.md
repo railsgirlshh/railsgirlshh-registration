@@ -4,6 +4,8 @@
 
 [ ![Codeship Status for railsgirlshh/railsgirlshh-registration](https://codeship.io/projects/5c35dfd0-48f8-0132-c0fe-2661e82857fb/status)](https://codeship.io/projects/46052)
 
+[![Code Climate](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration/badges/gpa.svg)](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration) [![Test Coverage](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration/badges/coverage.svg)](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration)
+
 Rails Girls Hamburg - attendee application and coach registration
 
 ## Setup
