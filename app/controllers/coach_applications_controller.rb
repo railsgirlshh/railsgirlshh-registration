@@ -1,6 +1,6 @@
-class CoachApplicationsController < ApplicationController
+class CoachApplicationsController < RegistrationsController
   before_action :set_event, except: [:self_care]
-  before_action :set_coach_application_via_token, only: [:self_care, :cancel, :cancel_dinner, :join_dinner]
+  before_action :set_application_via_token, only: [:self_care, :cancel, :cancel_dinner, :join_dinner]
 
   def new
     if @event.coach_reg_open?
@@ -26,19 +26,8 @@ class CoachApplicationsController < ApplicationController
     end
   end
 
-  def self_care
-  end
-
-  def cancel
-    if @coach_application.canceled!
-      redirect_to root_url, notice: t('notice.coach.registration_canceled')
-    else
-      redirect_to root_url, alert: t('notice.coach.cancellation_error')
-    end
-  end
-
   def cancel_dinner
-    if @coach_application.update(coachdinner: false)
+    if @application.update(coachdinner: false)
       redirect_to root_url, notice: t('notice.coach.dinner_canceled')
     else
       redirect_to root_url, alert: t('notice.coach.cancellation_error')
@@ -46,7 +35,7 @@ class CoachApplicationsController < ApplicationController
   end
 
   def join_dinner
-    if @coach_application.update(coachdinner: true)
+    if @application.update(coachdinner: true)
       redirect_to root_url, notice: t('notice.coach.dinner_joined')
     else
       redirect_to root_url, alert: t('notice.coach.cancellation_error')
@@ -55,10 +44,8 @@ class CoachApplicationsController < ApplicationController
 
   private
 
-  def set_coach_application_via_token
-    @coach_application = CoachApplication.find_by token: params[:token]
-    redirect_to root_url, alert: t('alert.application_not_found') unless @coach_application.present?
-    @event = @coach_application.event
+  def model_class
+    CoachApplication
   end
 
   # Only allow a trusted parameter "white list" through.

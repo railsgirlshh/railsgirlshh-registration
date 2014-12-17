@@ -69,16 +69,14 @@ de:
     coach_registration_opens: "Ab %{registration_start_date} kannst Du Dich hier als Coach anmelden. Die Anmeldefrist endet am %{registration_end_date}."
 
   notice:
+    registration_canceled: "Du hast Deine Anmeldung zurückgezogen."
+    cancellation_error: "Da hat leider nicht geklappt."
     attendee:
       registration_not_open: "Bewerbungen werden derzeit nicht entgegengenommen."
       registration_successful: "Deine Bewerbung wurde entgegengenommen, Du bekommst bald eine E-Mail von uns."
-      registration_canceled: "Du hast Deine Bewerbung zurückgezogen."
-      cancellation_error: "Da hat leider nicht geklappt."
     coach:
       registration_not_open: "Anmeldung als Coach derzeit nicht möglich."
       registration_successful: "Du bist jetzt als Coach angemeldet."
-      registration_canceled: "Deine Anmeldung wurde storniert."
-      cancellation_error: "Das hat leider nicht geklappt."
       dinner_canceled: "Teilnahme am Coachdinner abgesagt. Du bist nach wie vor für den Workshop registriert."
       dinner_joined: "Du bist jetzt zum Coachdinner angemeldet."
 

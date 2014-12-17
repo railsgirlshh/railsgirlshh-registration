@@ -6,5 +6,5 @@
       = @event.title
     p
       =  t 'applications.cancel_question' 
-    = button_to t('applications.cancel_button'), { action: "cancel", event_id: @event.id, token: @attendee_application.token }, class: 'button tiny radius'
+    = button_to t('applications.cancel_button'), { action: "cancel", event_id: @event.id, token: @application.token }, class: 'button tiny radius'
     = link_to t('applications.cancel_cancel'), root_url
