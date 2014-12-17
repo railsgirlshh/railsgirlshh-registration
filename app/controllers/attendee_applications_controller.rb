@@ -39,14 +39,6 @@ class AttendeeApplicationsController < ApplicationController
 
   private
 
-  def set_event
-    @event = Event.find(params[:event_id])
-  rescue ActiveRecord::RecordNotFound
-      flash[:alert] = t('alert.event_not_found')
-
-    redirect_to root_path
-  end
-
   def set_attendee_application_via_token
     @attendee_application = AttendeeApplication.find_by token: params[:token]
     redirect_to root_url, alert: t('alert.application_not_found') unless @attendee_application.present?

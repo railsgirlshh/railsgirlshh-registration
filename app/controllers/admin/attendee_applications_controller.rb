@@ -77,14 +77,6 @@ module Admin
       @statuses = AttendeeApplication.statuses
     end
 
-    def set_event
-      @event = Event.find(params[:event_id])
-    rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The event you were looking " +
-        "for could not be found."
-      redirect_to root_path
-    end
-
     # Only allow a trusted parameter "white list" through.
     def attendee_application_params
       params.require(:attendee_application).permit(:event_id, :first_name, :last_name, :email, :age, :female, :application_text, :prior_experience, :other_text, :status, :coc)
