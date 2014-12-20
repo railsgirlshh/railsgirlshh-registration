@@ -114,6 +114,9 @@ de:
         subject: Zusage für den Rails Girls Hamburg Workshop
       rejected_email:
         subject: Absage für den Rails Girls Hamburg Workshop
+    coach_application:
+      welcome_email:
+        subject: Rails Girls Hamburg Workshop
 
   admin:
     events:

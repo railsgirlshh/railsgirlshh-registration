@@ -4,6 +4,6 @@ class CoachApplicationMailer < ActionMailer::Base
 
   def welcome_email(coach_application)
     @coach_application = coach_application
-    mail(to: @coach_application.email, subject: 'Rails Girls Hamburg Workshop')
+    mail(to: @coach_application.email, subject: I18n.t('mailer.coach_application.welcome_email.subject'))
   end
 end
