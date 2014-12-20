@@ -106,6 +106,15 @@ de:
     cancel_cancel: "Abbrechen"
     cancel_question: "Möchtest Du Deine Teilnahme an der Veranstaltung absagen?"
 
+  mailer:
+    attendee_application:
+      welcome_email:
+        subject: Deine Bewerbung für den Rails Girls Hamburg Workshop
+      accepted_email:
+        subject: Zusage für den Rails Girls Hamburg Workshop
+      rejected_email:
+        subject: Absage für den Rails Girls Hamburg Workshop
+
   admin:
     events:
       index:
