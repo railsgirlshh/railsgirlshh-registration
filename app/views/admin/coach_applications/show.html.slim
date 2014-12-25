@@ -1,4 +1,4 @@
-- content_for(:title, "Coach Application for #{@event.title}"
+- content_for(:title, "Coach Application for #{@event.title}")
 h2
   = @coach_application.first_name + ' ' + @coach_application.last_name
 p
@@ -22,5 +22,5 @@ h3
 p
   = coach_self_care_url(@coach_application)
 = link_to 'Edit', edit_admin_event_coach_application_path(@event, @coach_application)
-|  | 
+|  |
 = link_to 'Back', admin_event_coach_applications_path
