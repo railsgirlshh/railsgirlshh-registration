@@ -100,6 +100,7 @@ de:
     coachdinner_join: "Zum Coachdinner anmelden"
 
   applications:
+    coc_explanation: "Unsere Veranstaltungen sollen so inklusiv wie möglich sein. Wir wollen, dass sich alle wohl fühlen. Deshalb gilt für den Workshop eine Vereinbarung dazu, wie wir miteinander umgehen möchten - ein sogenannter Code of Conduct."
     coc_html: "Ich akzeptiere den <a href='http://rubyberlin.github.io/code-of-conduct'>Code of Conduct</a>."
     cancel_headline: "Teilnahme absagen"
     cancel_button: "Ja, Teilnahme absagen"
