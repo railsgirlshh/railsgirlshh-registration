@@ -11,7 +11,7 @@ Rails Girls Hamburg - attendee application and coach registration
 ## Setup
 
 * In order to send emails, set the environment variables ```EMAIL_PASSWORD``` to our email password
-* Set the environment variable ```MY_DOMAIN`` to the domain where the application is run
+* Set the environment variable ```MY_DOMAIN``` to the domain where the application is run
 * Create an admin account on the console: ```AdminAccount.create(username: "foo", password_sha1: Digest::SHA1.hexdigest("bar"))```
 * Find more information in the docs folder (you can use ```rdoc``` to create a local version of the documentation, or browse files on github)
 
