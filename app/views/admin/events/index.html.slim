@@ -1,45 +1,43 @@
-h1.text-center
-  | Events
-.row
-  .large-12.large-centered.columns
-    table[style="width: 100%;"]
-      thead
-        tr
-          th
-            | Title
-          th
-            | Description
-          th
-            | Event date
-          th
-            | Coach dinner date
-          th
-            | Coach reg
-          th
-            | Attendee reg
-          th[colspan="5"]
-      tbody
-        - @events.each do |event|
-          tr
-            td
-              = event.title
-            td
-              = event.description
-            td
-              = event.event_date
-            td
-              = event.coach_dinner_date
-            td
-              == "#{event.coach_reg_start}&nbsp;- #{event.coach_reg_end}"
-            td
-              == "#{event.attendee_reg_start}&nbsp;- #{event.attendee_reg_end}"
-            td
-              = link_to t('.coach_applications'), [:admin, event, :coach_applications]
-            td
-              = link_to t('.attendee_applications'), [:admin, event, :attendee_applications]
-            td
-              = link_to 'Edit', edit_admin_event_path(event)
-            td
-              = link_to 'Destroy', [:admin, event], method: :delete, data: { confirm: 'Are you sure?' }
-    .text-center
-      = link_to 'New Event', new_admin_event_path
+- content_for(:title, "Events")
+
+table[style="width: 100%;"]
+  thead
+    tr
+      th
+        | Title
+      th
+        | Description
+      th
+        | Event date
+      th
+        | Coach dinner date
+      th
+        | Coach reg
+      th
+        | Attendee reg
+      th[colspan="5"]
+  tbody
+    - @events.each do |event|
+      tr
+        td
+          = event.title
+        td
+          = event.description
+        td
+          = event.event_date
+        td
+          = event.coach_dinner_date
+        td
+          == "#{event.coach_reg_start}&nbsp;- #{event.coach_reg_end}"
+        td
+          == "#{event.attendee_reg_start}&nbsp;- #{event.attendee_reg_end}"
+        td
+          = link_to t('.coach_applications'), [:admin, event, :coach_applications]
+        td
+          = link_to t('.attendee_applications'), [:admin, event, :attendee_applications]
+        td
+          = link_to 'Edit', edit_admin_event_path(event)
+        td
+          = link_to 'Destroy', [:admin, event], method: :delete, data: { confirm: 'Are you sure?' }
+.text-center
+  = link_to 'New Event', new_admin_event_path

@@ -1,5 +1,5 @@
 module Admin
-  class AttendeeApplicationsController < ApplicationController
+  class AttendeeApplicationsController < AdminController
     before_action :set_event
     before_action :set_attendee_application, only: [:show, :edit, :update, :destroy, :accept, :reject]
     before_action :set_statuses, only: [:new, :edit, :create, :update]
@@ -19,7 +19,7 @@ module Admin
     end
 
     def create
-      @attendee_application = @event.attendee_applications.build(attendee_application_params) 
+      @attendee_application = @event.attendee_applications.build(attendee_application_params)
 
       if @attendee_application.save
         redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully created.'
@@ -66,7 +66,7 @@ module Admin
         end
       end
     end
- 
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendee_application
