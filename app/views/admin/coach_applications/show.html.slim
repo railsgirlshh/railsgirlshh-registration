@@ -1,6 +1,4 @@
-h1
-  | Coach Application for 
-  = @event.title
+- content_for(:title, "Coach Application for #{@event.title}"
 h2
   = @coach_application.first_name + ' ' + @coach_application.last_name
 p

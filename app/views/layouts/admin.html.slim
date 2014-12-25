@@ -2,7 +2,8 @@ doctype html
 html
   head
     title
-      | RailsgirlshhRegistration
+      = yield(:title) if content_for?(:title)
+      | Admin – RailsGirls
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -15,4 +16,8 @@ html
         - if n = notice
           .alert-box.success.radius[data-alert]
             = n
-    = yield
+
+    h2.text-center= yield(:title)
+    .row
+      .large-12.large-centered.columns
+        = yield

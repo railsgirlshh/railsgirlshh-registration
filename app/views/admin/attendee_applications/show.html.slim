@@ -1,6 +1,4 @@
-h1
-  | Application for 
-  = @event.title
+- content_for(:title, "Application for #{@event.title}"
 h2
   = @attendee_application.first_name + ' ' + @attendee_application.last_name
 p
