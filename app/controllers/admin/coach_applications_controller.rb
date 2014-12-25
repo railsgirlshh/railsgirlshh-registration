@@ -1,5 +1,5 @@
 module Admin
-  class CoachApplicationsController < ApplicationController
+  class CoachApplicationsController < AdminController
     before_action :set_event
     before_action :set_coach_application, only: [:show, :edit, :update, :destroy]
     before_action :set_statuses, only: [:new, :edit, :create, :update]
@@ -19,7 +19,7 @@ module Admin
     end
 
     def create
-      @coach_application = @event.coach_applications.build(coach_application_params) 
+      @coach_application = @event.coach_applications.build(coach_application_params)
 
       if @coach_application.save
         redirect_to [:admin, @event, @coach_application], notice: 'Coach application was successfully created.'
@@ -41,7 +41,7 @@ module Admin
       redirect_to admin_event_coach_applications_url, notice: 'Coach application was successfully destroyed.'
     end
 
- 
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_coach_application
