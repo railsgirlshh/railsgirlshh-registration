@@ -1,6 +1,6 @@
-class AttendeeApplicationsController < ApplicationController
+class AttendeeApplicationsController < RegistrationsController
   before_action :set_event, except: [:self_care]
-  before_action :set_attendee_application_via_token, only: [:self_care, :cancel]
+  before_action :set_application_via_token, only: [:self_care, :cancel]
 
 
   def new
@@ -26,31 +26,10 @@ class AttendeeApplicationsController < ApplicationController
     end
   end
 
-  def self_care
-  end
-
-  def cancel
-    if @attendee_application.canceled!
-      redirect_to root_url, notice: t('notice.attendee.registration_canceled')
-    else
-      redirect_to root_url, alert: t('notice.attendee.cancellation_error')
-    end
-  end
-
   private
 
-  def set_event
-    @event = Event.find(params[:event_id])
-  rescue ActiveRecord::RecordNotFound
-      flash[:alert] = t('alert.event_not_found')
-
-    redirect_to root_path
-  end
-
-  def set_attendee_application_via_token
-    @attendee_application = AttendeeApplication.find_by token: params[:token]
-    redirect_to root_url, alert: t('alert.application_not_found') unless @attendee_application.present?
-    @event = @attendee_application.event
+  def model_class
+    AttendeeApplication
   end
 
   # Only allow a trusted parameter "white list" through.
