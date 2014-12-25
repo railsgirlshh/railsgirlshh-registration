@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.0.7)
     actionmailer (4.1.1)
       actionpack (= 4.1.1)
       actionview (= 4.1.1)
@@ -43,8 +44,11 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.4)
     mime-types (1.25.1)
     minitest (5.3.4)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.10.1)
     pg (0.17.1)
     polyglot (0.3.5)
@@ -108,8 +112,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm (~> 4.0.7)
   foundation-rails (~> 5.2.3)
   jquery-rails
+  mocha (~> 1.1.0)
   pg (~> 0.17.1)
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)

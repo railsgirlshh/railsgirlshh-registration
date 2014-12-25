@@ -42,14 +42,14 @@ table
           | <span id="accept-
           = attendee_application.id
           | ">
-          - if attendee_application.open? || attendee_application.on_waiting_list?
+          - if attendee_application.may_get_accepted?
             = button_to [:accept, :admin, @event, attendee_application], remote: true, class: 'button tiny radius'  do
               |  Accept 
         td
           | <span id="reject-
           = attendee_application.id
           | ">
-          - if attendee_application.open? || attendee_application.on_waiting_list?
+          - if attendee_application.may_get_rejected?
             = button_to [:reject, :admin, @event, attendee_application], remote: true, class: 'button tiny radius'  do
               |  Reject 
         td
