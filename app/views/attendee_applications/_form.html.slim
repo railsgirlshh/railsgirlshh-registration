@@ -32,6 +32,9 @@
   .field
     = f.label :other_text
     = f.text_area :other_text, rows: 10, placeholder: "#{t 'attendee_applications.your_other'}"
+  .field
+    = f.check_box :mailinglist_subscription
+    = f.label :mailinglist_subscription
   .p.info-text
     = t 'applications.coc_explanation'
   .field

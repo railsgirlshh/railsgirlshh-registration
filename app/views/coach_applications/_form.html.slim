@@ -26,6 +26,9 @@
       = f.check_box :coachdinner
       = f.label :coachdinner, "#{t 'coach_applications.coach_dinner_participation', coach_dinner_date: l(@event.coach_dinner_date, format: :long)}"
       br
+  .field
+    = f.check_box :mailinglist_subscription
+    = f.label :mailinglist_subscription
   .p.info-text
     = t 'applications.coc_explanation'
   .field

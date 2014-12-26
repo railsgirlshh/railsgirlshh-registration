@@ -31,6 +31,10 @@ p
   strong
     | Attendee reg end:
   = @event.attendee_reg_end
+p
+  strong Mailinglist Subscribers
+  textarea(readonly)= @event_mailinglist_subscribers.join(',')
+
 = link_to 'Edit', edit_admin_event_path(@event)
-|  | 
+|  |
 = link_to 'Back', admin_events_path

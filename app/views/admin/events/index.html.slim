@@ -20,7 +20,7 @@ table[style="width: 100%;"]
     - @events.each do |event|
       tr
         td
-          = event.title
+          = link_to event.title, [:admin, event]
         td
           = event.description
         td

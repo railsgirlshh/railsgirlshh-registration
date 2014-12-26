@@ -50,6 +50,6 @@ class CoachApplicationsController < RegistrationsController
 
   # Only allow a trusted parameter "white list" through.
   def coach_application_params
-    params.require(:coach_application).permit(:event_id, :first_name, :last_name, :email, :other_text, :coachdinner, :coc)
+    params.require(:coach_application).permit(:event_id, :first_name, :last_name, :email, :other_text, :coachdinner, :coc, :mailinglist_subscription)
   end
 end

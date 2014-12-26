@@ -12,6 +12,8 @@ class AttendeeApplication < ActiveRecord::Base
 
   enum status: [ :open, :accepted, :rejected, :on_waiting_list, :canceled ]
 
+  scope :mailinglist_subscribers, -> { where(mailinglist_subscription: true) }
+
   aasm :column => :status, :enum => true do
     state :open, :initial => true
     state :accepted

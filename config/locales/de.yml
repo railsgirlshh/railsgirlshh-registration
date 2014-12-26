@@ -42,6 +42,7 @@ de:
         application_text: *application_text
         prior_experience: *prior_experience
         other_text: *other_text
+        mailinglist_subscription: "Ich möchte der Railsgirls-Mailinglist beitretten."
       coach_application:
         first_name: *first_name
         last_name: *last_name
@@ -49,6 +50,7 @@ de:
         coachdinner: *coachdinner
         prior_experience: *prior_experience
         other_text: *other_text
+        mailinglist_subscription: "Ich möchte der Railsgirls-Mailinglist beitretten."
   alert:
     event_not_found: "Die gesuchte Veranstaltung konnte nicht gefunden werden."
     application_not_found: "Deine Anmeldung konnte nicht gefunden werden"
