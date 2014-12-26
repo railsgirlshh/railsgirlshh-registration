@@ -42,27 +42,11 @@ module Admin
     end
 
     def accept
-      respond_to do |format|
-        if @attendee_application.get_accepted!
-          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully accepted.' }
-          format.js   { }
-        else
-          format.html { render action: "edit" }
-          format.js   { render status: 500 }
-        end
-      end
+      transition_attendee_application_and_respond(:get_accepted!)
     end
 
     def reject
-      respond_to do |format|
-        if @attendee_application.get_rejected!
-          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully rejected.' }
-          format.js   { }
-        else
-          format.html { render action: "edit" }
-          format.js   { render status: 500 }
-        end
-      end
+      transition_attendee_application_and_respond(:get_rejected!)
     end
 
     private
@@ -78,6 +62,18 @@ module Admin
     # Only allow a trusted parameter "white list" through.
     def attendee_application_params
       params.require(:attendee_application).permit(:event_id, :first_name, :last_name, :email, :age, :female, :application_text, :prior_experience, :other_text, :status, :coc)
+    end
+
+    def transition_attendee_application_and_respond(transition)
+      respond_to do |format|
+        if @attendee_application.send(transition)
+          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully updated.' }
+          format.js   { }
+        else
+          format.html { render action: "edit" }
+          format.js   { render status: 500 }
+        end
+      end
     end
   end
 end
