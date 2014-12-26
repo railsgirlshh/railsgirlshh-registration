@@ -9,4 +9,6 @@ class CoachApplication < ActiveRecord::Base
   validates_acceptance_of :coc, allow_nil: false, on: :create
 
   enum status: [ :registered, :canceled ]
+
+  scope :mailinglist_subscribers, -> { where(mailinglist_subscription: true) }
 end
