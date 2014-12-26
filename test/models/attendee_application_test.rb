@@ -51,4 +51,59 @@ module AttendeeApplicationTest
       assert_not attendee_application.save, "Saved the attendee application without invalid age"
     end
   end
+
+  class AttendeeApplicationGetRejected < ActiveSupport::TestCase
+    setup do
+      @event = events(:minimal_event)
+    end
+
+    test "should reject attendee_application" do
+      @attendee_application = @event.attendee_applications.build(last_name: 'Foo', first_name: 'Ada', email: 'foo@example.com', coc: "1")
+      assert_difference('AttendeeApplication.rejected.count') do
+        @attendee_application.get_rejected!
+      end
+    end
+
+    test "should send email when attendee_application is rejected" do
+      @attendee_application = @event.attendee_applications.build(last_name: 'Foo', first_name: 'Ada', email: 'foo@example.com', coc: "1")
+
+      assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+        @attendee_application.get_rejected!
+      end
+
+      rejected_email = ActionMailer::Base.deliveries.last
+
+      assert_equal "Keine Teilnahme am Rails Girls Hamburg Workshop", rejected_email.subject
+      assert_match(/Hallo Ada/, rejected_email.body.to_s)
+
+      assert_equal @attendee_application.email, rejected_email.to[0]
+    end
+  end
+
+  class AttendeeApplicationGetAccepted < ActiveSupport::TestCase
+    setup do
+      @event = events(:minimal_event)
+    end
+
+    test "should accept attendee_application" do
+      @attendee_application = @event.attendee_applications.build(last_name: 'Foo', first_name: 'Ada', email: 'foo@example.com', coc: "1")
+      assert_difference('AttendeeApplication.accepted.count') do
+        @attendee_application.get_accepted!
+      end
+    end
+
+    test "should send email when attendee_application is accepted" do
+      @attendee_application = @event.attendee_applications.build(last_name: 'Foo', first_name: 'Ada', email: 'foo@example.com', coc: "1")
+      assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+        @attendee_application.get_accepted!
+      end
+
+      accepted_email = ActionMailer::Base.deliveries.last
+
+      assert_equal "Teilnahme am Rails Girls Hamburg Workshop", accepted_email.subject
+      assert_match(/Hallo Ada/, accepted_email.body.to_s)
+
+      assert_equal @attendee_application.email, accepted_email.to[0]
+    end
+  end
 end

@@ -50,41 +50,17 @@ module Admin
     end
 
     test "should accept attendee_application" do
-      assert_difference('AttendeeApplication.accepted.count') do
-        post :accept, event_id: @event.id, id: @attendee_application
-      end
+      AttendeeApplication.any_instance.expects(:get_accepted!).returns(true)
+      post :accept, event_id: @event.id, id: @attendee_application
 
       assert_redirected_to admin_event_attendee_application_path(@event, assigns(:attendee_application))
-    end
-
-    test "should send email when attendee_application is rejected" do
-      assert_difference 'ActionMailer::Base.deliveries.size', +1 do
-        post :reject, event_id: @event.id, id: @attendee_application
-      end
-      rejected_email = ActionMailer::Base.deliveries.last
-
-      assert_equal "Keine Teilnahme am Rails Girls Hamburg Workshop", rejected_email.subject
-      assert_equal @attendee_application.email, rejected_email.to[0]
-      assert_match(/Hallo Ada/, rejected_email.body.to_s)
     end
 
     test "should reject attendee_application" do
-      assert_difference('AttendeeApplication.rejected.count') do
-        post :reject, event_id: @event.id, id: @attendee_application
-      end
+      AttendeeApplication.any_instance.expects(:get_rejected!).returns(true)
+      post :reject, event_id: @event.id, id: @attendee_application
 
       assert_redirected_to admin_event_attendee_application_path(@event, assigns(:attendee_application))
-    end
-
-    test "should send email when attendee_application is accepted" do
-      assert_difference 'ActionMailer::Base.deliveries.size', +1 do
-        post :accept, event_id: @event.id, id: @attendee_application
-      end
-      accepted_email = ActionMailer::Base.deliveries.last
-
-      assert_equal "Teilnahme am Rails Girls Hamburg Workshop", accepted_email.subject
-      assert_equal @attendee_application.email, accepted_email.to[0]
-      assert_match(/Hallo Ada/, accepted_email.body.to_s)
     end
   end
 end
