@@ -6,6 +6,7 @@ gem 'rails', '4.1.1'
 gem 'pg', '~> 0.17.1'
 gem 'aasm', '~> 4.0.7'
 gem 'mocha', '~> 1.1.0', group: :test
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
