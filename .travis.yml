@@ -10,5 +10,6 @@ deploy:
   app: damp-shelf-5878
   on:
     repo: railsgirlshh/railsgirlshh-registration
+    branch: master
   run:
     - "bundle exec rake db:migrate"
