@@ -11,4 +11,4 @@ deploy:
   on:
     repo: railsgirlshh/railsgirlshh-registration
   run:
-    - "rake db:migrate"
+    - "bundle exec rake db:migrate"
