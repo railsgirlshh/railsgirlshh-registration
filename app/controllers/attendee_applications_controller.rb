@@ -4,7 +4,7 @@ class AttendeeApplicationsController < RegistrationsController
 
 
   def new
-    if @event.attendee_reg_open?
+    if @event.attendee_reg.open?
       @attendee_application = @event.attendee_applications.build
     else
       redirect_to root_url, notice:  t('notice.attendee.registration_not_open')
@@ -12,7 +12,7 @@ class AttendeeApplicationsController < RegistrationsController
   end
 
   def create
-    if @event.attendee_reg_open?
+    if @event.attendee_reg.open?
       @attendee_application = @event.attendee_applications.build(attendee_application_params)
 
       if @attendee_application.save

@@ -63,12 +63,9 @@ de:
     submit_apply: "Jetzt bewerben"
     submit_register: "Jetzt anmelden"
   events_helper:
-    attendee_registration_open: "Du kannst Dich noch bis %{application_end_date} für die Teilnahme bewerben."
-    attendee_registration_closed: "Die Bewerbungsfrist für die Teilnahme ist bereits abgelaufen."
-    attendee_registration_opens: "Ab %{application_start_date} kannst Du Dich hier für die Teilnahme bewerben. Die Bewerbungsfrist endet am %{application_end_date}."
-    coach_registration_open: "Du kannst Dich noch bis %{registration_end_date} als Coach anmelden."
-    coach_registration_closed: "Die Anmeldung als Coach ist nicht mehr möglich."
-    coach_registration_opens: "Ab %{registration_start_date} kannst Du Dich hier als Coach anmelden. Die Anmeldefrist endet am %{registration_end_date}."
+    registration_open: "Du kannst Dich noch bis %{registration_end_date} anmelden."
+    registration_closed: "Die Anmeldung ist leider nicht mehr möglich."
+    registration_opens: "Ab %{registration_start_date} kannst Du Dich hier anmelden. Die Anmeldefrist endet am %{registration_end_date}."
 
   notice:
     registration_canceled: "Du hast Deine Anmeldung zurückgezogen."

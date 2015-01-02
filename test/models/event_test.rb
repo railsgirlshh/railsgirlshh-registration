@@ -71,112 +71,112 @@ module EventTest
   class CoachRegEndDateTest < ActiveSupport::TestCase
     test 'expects event date if no end given' do
       event = events(:minimal_event)
-      assert_equal event.coach_reg_end_date, event.event_date, 'expects event date if no end given'
+      assert_equal event.coach_reg.end_date, event.event_date, 'expects event date if no end given'
     end
 
     test 'expects end if not blank' do
       event = events(:minimal_event)
       event.coach_reg_end= Date.today+2
-      assert_equal event.coach_reg_end, event.coach_reg_end_date, 'expects end if not blank'
+      assert_equal event.coach_reg_end, event.coach_reg.end_date, 'expects end if not blank'
     end
   end
 
   class CoachRegOpenTest < ActiveSupport::TestCase
     test 'expects true if no start or end' do
       event = events(:minimal_event)
-      assert event.coach_reg_open?, 'should be true if start and end empty'
+      assert event.coach_reg.open?, 'should be true if start and end empty'
     end
 
     test 'expects true if no start and end in the future' do
       event = events(:minimal_event)
       event.coach_reg_end= Date.today + 2
-      assert event.coach_reg_open?, 'should be true if end in the future'
+      assert event.coach_reg.open?, 'should be true if end in the future'
     end
 
     test 'expects true if start in the past end end date in the future' do
       event = events(:minimal_event)
       event.coach_reg_start= Date.today - 2
       event.coach_reg_end= Date.today + 2
-      assert event.coach_reg_open?, 'should be true if start in the past, end in the future'
+      assert event.coach_reg.open?, 'should be true if start in the past, end in the future'
     end
 
     test 'expects true if start date in the past, no end, end event in the future' do
       event = events(:minimal_event)
       event.coach_reg_start= Date.today - 2
-      assert event.coach_reg_open?, 'should be true if start in the past and no end given'
+      assert event.coach_reg.open?, 'should be true if start in the past and no end given'
     end
 
     test 'expects false if event is over' do
       event = events(:past_event)
-      assert_not event.coach_reg_open?, 'should be false if event is over'
+      assert_not event.coach_reg.open?, 'should be false if event is over'
     end
 
     test 'expects false if start is in the future' do
       event = events(:minimal_event)
       event.coach_reg_start= Date.today + 2
-      assert_not event.coach_reg_open?, 'should be false if start is in the future'
+      assert_not event.coach_reg.open?, 'should be false if start is in the future'
     end
 
     test 'expects false if end is in the past' do
       event = events(:minimal_event)
       event.coach_reg_end= Date.today - 2
-      assert_not event.coach_reg_open?, 'should be false if end is in the past'
+      assert_not event.coach_reg.open?, 'should be false if end is in the past'
     end
   end
 
   class AttendeeRegEndDateTest < ActiveSupport::TestCase
     test 'expects event date if no end given' do
       event = events(:minimal_event)
-      assert_equal event.event_date, event.attendee_reg_end_date, 'expects event date if no end given'
+      assert_equal event.event_date, event.attendee_reg.end_date, 'expects event date if no end given'
     end
 
     test 'expects end if not blank' do
       event = events(:minimal_event)
       event.attendee_reg_end= Date.today+2
-      assert_equal event.attendee_reg_end, event.attendee_reg_end_date, 'expects end if not blank'
+      assert_equal event.attendee_reg_end, event.attendee_reg.end_date, 'expects end if not blank'
     end
   end
 
   class AttendeeRegOpenTest < ActiveSupport::TestCase
     test 'expects true if no start or end' do
       event = events(:minimal_event)
-      assert event.attendee_reg_open?, 'should be true if start and end empty'
+      assert event.attendee_reg.open?, 'should be true if start and end empty'
     end
 
     test 'expects true if no start and end in the future' do
       event = events(:minimal_event)
       event.attendee_reg_end= Date.today + 2
-      assert event.attendee_reg_open?, 'should be true if end in the future'
+      assert event.attendee_reg.open?, 'should be true if end in the future'
     end
 
     test 'expects true if start in the past end end date in the future' do
       event = events(:minimal_event)
       event.attendee_reg_start= Date.today - 2
       event.attendee_reg_end= Date.today + 2
-      assert event.attendee_reg_open?, 'should be true if start in the past, end in the future'
+      assert event.attendee_reg.open?, 'should be true if start in the past, end in the future'
     end
 
     test 'expects true if start date in the past, no end, end event in the future' do
       event = events(:minimal_event)
       event.attendee_reg_start= Date.today - 2
-      assert event.attendee_reg_open?, 'should be true if start in the past and no end given'
+      assert event.attendee_reg.open?, 'should be true if start in the past and no end given'
     end
 
     test 'expects false if event is over' do
       event = events(:past_event)
-      assert_not event.attendee_reg_open?, 'should be false if event is over'
+      assert_not event.attendee_reg.open?, 'should be false if event is over'
     end
 
     test 'expects false if start is in the future' do
       event = events(:minimal_event)
       event.attendee_reg_start= Date.today + 2
-      assert_not event.attendee_reg_open?, 'should be false if start is in the future'
+      assert_not event.attendee_reg.open?, 'should be false if start is in the future'
     end
 
     test 'expects false if end is in the past' do
       event = events(:minimal_event)
       event.attendee_reg_end= Date.today - 2
-      assert_not event.attendee_reg_open?, 'should be false if end is in the past'
+      assert_not event.attendee_reg.open?, 'should be false if end is in the past'
     end
   end
 end

@@ -3,7 +3,7 @@ class CoachApplicationsController < RegistrationsController
   before_action :set_application_via_token, only: [:self_care, :cancel, :cancel_dinner, :join_dinner]
 
   def new
-    if @event.coach_reg_open?
+    if @event.coach_reg.open?
       @coach_application = @event.coach_applications.build
     else
       redirect_to root_url, notice: t('notice.coach.registration_not_open')
@@ -11,7 +11,7 @@ class CoachApplicationsController < RegistrationsController
   end
 
   def create
-    if @event.coach_reg_open?
+    if @event.coach_reg.open?
       @coach_application = @event.coach_applications.build(coach_application_params)
 
       if @coach_application.save
