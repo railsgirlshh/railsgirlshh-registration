@@ -7,9 +7,10 @@ deploy:
   provider: heroku
   api_key:
     secure: BTWWQk34SGAEiGTtQWEYb3BfEv20WFugH8C3Oa68zQeIk9KhSVDxd61HMQENNyUoJD0S/E2HX0uZM6YOmlDRLHmNM6xUI8BoZ5vioE/bhzFHOtaGLet+OKidPH5SBlfLatWF+fyczFA/aomrxTF/WRxI4h2hiUYfTr8ybHZ+3FE=
-  app: damp-shelf-5878
+  app:
+    master: damp-shelf-5878
+    production: railsgirls-hamburg
   on:
     repo: railsgirlshh/railsgirlshh-registration
-    branch: master
   run:
     - "bundle exec rake db:migrate"
