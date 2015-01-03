@@ -1,5 +1,5 @@
 class CoachApplicationsController < RegistrationsController
-  before_action :set_event, except: [:self_care]
+  before_action :set_event, except: [:self_care, :cancel, :cancel_dinner, :join_dinner]
   before_action :set_application_via_token, only: [:self_care, :cancel, :cancel_dinner, :join_dinner]
 
   def new
