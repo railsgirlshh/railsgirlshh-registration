@@ -1,7 +1,16 @@
 language: ruby
 rvm:
-  - "2.1.4"
+- 2.1.4
 before_script:
- - bundle exec rake db:drop db:create db:migrate
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+- bundle exec rake db:drop db:create db:migrate
+deploy:
+  provider: heroku
+  api_key:
+    secure: BTWWQk34SGAEiGTtQWEYb3BfEv20WFugH8C3Oa68zQeIk9KhSVDxd61HMQENNyUoJD0S/E2HX0uZM6YOmlDRLHmNM6xUI8BoZ5vioE/bhzFHOtaGLet+OKidPH5SBlfLatWF+fyczFA/aomrxTF/WRxI4h2hiUYfTr8ybHZ+3FE=
+  app:
+    master: damp-shelf-5878
+    production: railsgirls-hamburg
+  on:
+    repo: railsgirlshh/railsgirlshh-registration
+  run:
+    - "bundle exec rake db:migrate"

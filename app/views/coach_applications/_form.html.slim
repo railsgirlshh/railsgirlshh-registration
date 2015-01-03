@@ -1,11 +1,11 @@
-= form_for([@event, @coach_application]) do |f|
-  - if @coach_application.errors.any?
+= form_for([@event, @application]) do |f|
+  - if @application.errors.any?
     #error_explanation
       h2
-        = pluralize(@coach_application.errors.count, "error")
+        = pluralize(@application.errors.count, "error")
         |  prohibited this coach_application from being saved:
       ul
-        - @coach_application.errors.full_messages.each do |message|
+        - @application.errors.full_messages.each do |message|
           li
             = message
   .field
@@ -26,6 +26,11 @@
       = f.check_box :coachdinner
       = f.label :coachdinner, "#{t 'coach_applications.coach_dinner_participation', coach_dinner_date: l(@event.coach_dinner_date, format: :long)}"
       br
+  .field
+    = f.check_box :mailinglist_subscription
+    = f.label :mailinglist_subscription
+  .p.info-text
+    = t 'applications.coc_explanation'
   .field
     = f.check_box :coc
     = f.label :coc, "#{t 'applications.coc_html'}".html_safe

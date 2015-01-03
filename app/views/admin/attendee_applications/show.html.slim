@@ -1,6 +1,4 @@
-h1
-  | Application for 
-  = @event.title
+- content_for(:title, "Application for #{@event.title}")
 h2
   = @attendee_application.first_name + ' ' + @attendee_application.last_name
 p
@@ -36,5 +34,5 @@ h3
 p
   = attendee_self_care_url(@attendee_application)
 = link_to 'Edit', edit_admin_event_attendee_application_path(@event, @attendee_application)
-|  | 
+|  |
 = link_to 'Back', admin_event_attendee_applications_path

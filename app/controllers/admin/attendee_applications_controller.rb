@@ -1,5 +1,5 @@
 module Admin
-  class AttendeeApplicationsController < ApplicationController
+  class AttendeeApplicationsController < AdminController
     before_action :set_event
     before_action :set_attendee_application, only: [:show, :edit, :update, :destroy, :accept, :reject]
     before_action :set_statuses, only: [:new, :edit, :create, :update]
@@ -19,7 +19,7 @@ module Admin
     end
 
     def create
-      @attendee_application = @event.attendee_applications.build(attendee_application_params) 
+      @attendee_application = @event.attendee_applications.build(attendee_application_params)
 
       if @attendee_application.save
         redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully created.'
@@ -42,31 +42,13 @@ module Admin
     end
 
     def accept
-      respond_to do |format|
-        if @attendee_application.accepted!
-          AttendeeApplicationMailer.accepted_email(@attendee_application).deliver
-          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully accepted.' }
-          format.js   { }
-        else
-          format.html { render action: "edit" }
-          format.js   { render status: 500 }
-        end
-      end
+      transition_attendee_application_and_respond(:get_accepted!)
     end
 
     def reject
-      respond_to do |format|
-        if @attendee_application.rejected!
-          AttendeeApplicationMailer.rejected_email(@attendee_application).deliver
-          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully rejected.' }
-          format.js   { }
-        else
-          format.html { render action: "edit" }
-          format.js   { render status: 500 }
-        end
-      end
+      transition_attendee_application_and_respond(:get_rejected!)
     end
- 
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendee_application
@@ -77,17 +59,21 @@ module Admin
       @statuses = AttendeeApplication.statuses
     end
 
-    def set_event
-      @event = Event.find(params[:event_id])
-    rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The event you were looking " +
-        "for could not be found."
-      redirect_to root_path
-    end
-
     # Only allow a trusted parameter "white list" through.
     def attendee_application_params
       params.require(:attendee_application).permit(:event_id, :first_name, :last_name, :email, :age, :female, :application_text, :prior_experience, :other_text, :status, :coc)
+    end
+
+    def transition_attendee_application_and_respond(transition)
+      respond_to do |format|
+        if @attendee_application.send(transition)
+          format.html { redirect_to [:admin, @event, @attendee_application], notice: 'Attendee application was successfully updated.' }
+          format.js   { }
+        else
+          format.html { render action: "edit" }
+          format.js   { render status: 500 }
+        end
+      end
     end
   end
 end

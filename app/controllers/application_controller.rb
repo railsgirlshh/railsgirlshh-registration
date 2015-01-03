@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
+
+  def set_event
+    @event = Event.find(params[:event_id])
+  rescue ActiveRecord::RecordNotFound
+      flash[:alert] = t('alert.event_not_found')
+    redirect_to root_path
+  end
 end

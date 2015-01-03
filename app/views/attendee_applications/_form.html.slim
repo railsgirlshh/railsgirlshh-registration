@@ -1,11 +1,11 @@
-= form_for([@event, @attendee_application]) do |f|
-  - if @attendee_application.errors.any?
+= form_for([@event, @application]) do |f|
+  - if @application.errors.any?
     #error_explanation
       h2
-        = pluralize(@attendee_application.errors.count, "error")
+        = pluralize(@application.errors.count, "error")
         |  prohibited this attendee_application from being saved:
       ul
-        - @attendee_application.errors.full_messages.each do |message|
+        - @application.errors.full_messages.each do |message|
           li
             = message
   .field
@@ -32,6 +32,11 @@
   .field
     = f.label :other_text
     = f.text_area :other_text, rows: 10, placeholder: "#{t 'attendee_applications.your_other'}"
+  .field
+    = f.check_box :mailinglist_subscription
+    = f.label :mailinglist_subscription
+  .p.info-text
+    = t 'applications.coc_explanation'
   .field
     = f.check_box :coc
     = f.label :coc, "#{t 'applications.coc_html'}".html_safe

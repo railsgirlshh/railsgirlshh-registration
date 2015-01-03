@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      attendee_application:
+        mailinglist_subscription: "I would like to join the RailsGirls-Mailinglist"
+      coach_application:
+        mailinglist_subscription: "I would like to join the RailsGirls-Mailinglist"
   alert:
     event_not_found: "The event you were looking for could not be found."
     application_not_found: "We could not find your application."

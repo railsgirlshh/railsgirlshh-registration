@@ -42,6 +42,7 @@ de:
         application_text: *application_text
         prior_experience: *prior_experience
         other_text: *other_text
+        mailinglist_subscription: "Ich möchte der Railsgirls-Mailinglist beitreten."
       coach_application:
         first_name: *first_name
         last_name: *last_name
@@ -49,6 +50,7 @@ de:
         coachdinner: *coachdinner
         prior_experience: *prior_experience
         other_text: *other_text
+        mailinglist_subscription: "Ich möchte der Railsgirls-Mailinglist beitreten."
   alert:
     event_not_found: "Die gesuchte Veranstaltung konnte nicht gefunden werden."
     application_not_found: "Deine Anmeldung konnte nicht gefunden werden"
@@ -61,24 +63,16 @@ de:
     submit_apply: "Jetzt bewerben"
     submit_register: "Jetzt anmelden"
   events_helper:
-    attendee_registration_open: "Du kannst Dich noch bis %{application_end_date} für die Teilnahme bewerben."
-    attendee_registration_closed: "Die Bewerbungsfrist für die Teilnahme ist bereits abgelaufen."
-    attendee_registration_opens: "Ab %{application_start_date} kannst Du Dich hier für die Teilnahme bewerben. Die Bewerbungsfrist endet am %{application_end_date}."
-    coach_registration_open: "Du kannst Dich noch bis %{registration_end_date} als Coach anmelden."
-    coach_registration_closed: "Die Anmeldung als Coach ist nicht mehr möglich."
-    coach_registration_opens: "Ab %{registration_start_date} kannst Du Dich hier als Coach anmelden. Die Anmeldefrist endet am %{registration_end_date}."
+    registration_open: "Du kannst Dich noch bis %{registration_end_date} anmelden."
+    registration_closed: "Die Anmeldung ist leider nicht mehr möglich."
+    registration_opens: "Ab %{registration_start_date} kannst Du Dich hier anmelden. Die Anmeldefrist endet am %{registration_end_date}."
 
   notice:
-    attendee:
-      registration_not_open: "Bewerbungen werden derzeit nicht entgegengenommen."
-      registration_successful: "Deine Bewerbung wurde entgegengenommen, Du bekommst bald eine E-Mail von uns."
-      registration_canceled: "Du hast Deine Bewerbung zurückgezogen."
-      cancellation_error: "Da hat leider nicht geklappt."
+    registration_canceled: "Du hast Deine Anmeldung zurückgezogen."
+    cancellation_error: "Da hat leider nicht geklappt."
+    registration_not_open: "Anmeldungen werden derzeit nicht entgegengenommen."
+    registration_successful: "Deine Anmeldung wurde entgegengenommen. Du bekommst eine E-Mail von uns."
     coach:
-      registration_not_open: "Anmeldung als Coach derzeit nicht möglich."
-      registration_successful: "Du bist jetzt als Coach angemeldet."
-      registration_canceled: "Deine Anmeldung wurde storniert."
-      cancellation_error: "Das hat leider nicht geklappt."
       dinner_canceled: "Teilnahme am Coachdinner abgesagt. Du bist nach wie vor für den Workshop registriert."
       dinner_joined: "Du bist jetzt zum Coachdinner angemeldet."
 
@@ -100,6 +94,7 @@ de:
     coachdinner_join: "Zum Coachdinner anmelden"
 
   applications:
+    coc_explanation: "Unsere Veranstaltungen sollen so inklusiv wie möglich sein. Wir wollen, dass sich alle wohl fühlen. Deshalb gilt für den Workshop eine Vereinbarung dazu, wie wir miteinander umgehen möchten - ein sogenannter Code of Conduct."
     coc_html: "Ich akzeptiere den <a href='http://rubyberlin.github.io/code-of-conduct'>Code of Conduct</a>."
     cancel_headline: "Teilnahme absagen"
     cancel_button: "Ja, Teilnahme absagen"
@@ -118,6 +113,11 @@ de:
       welcome_email:
         subject: Rails Girls Hamburg Workshop
 
+  mail:
+    salutation: "Hallo %{first_name},"
+    attendee_welcome: 
+      body: "wir haben deine Bewerbung für den nächsten Workshop erhalten. Leider\nsind die Plätze begrenzt, deshalb können wir nicht alle Anmeldungen\nberücksichtigen. Die Zu- und Absagen verschicken wir einige Tage\nnach Ende der Anmeldefrist per E-Mail. Bis dahin bitten wir dich um\nGeduld.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n\n%{self_care_url}"
+      subject: "Rails Girls Hamburg Workshop"
   admin:
     events:
       index:
