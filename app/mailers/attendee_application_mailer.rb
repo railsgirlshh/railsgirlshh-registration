@@ -4,7 +4,7 @@ class AttendeeApplicationMailer < ActionMailer::Base
 
   def welcome_email(attendee_application)
     @attendee_application = attendee_application
-    mail(to: @attendee_application.email, subject: 'Rails Girls Hamburg Workshop')
+    mail(to: @attendee_application.email, subject: I18n.t('mail.attendee_welcome.subject'))
   end
 
   def accepted_email(attendee_application)
