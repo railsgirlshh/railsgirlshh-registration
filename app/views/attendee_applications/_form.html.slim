@@ -1,11 +1,11 @@
-= form_for([@event, @attendee_application]) do |f|
-  - if @attendee_application.errors.any?
+= form_for([@event, @application]) do |f|
+  - if @application.errors.any?
     #error_explanation
       h2
-        = pluralize(@attendee_application.errors.count, "error")
+        = pluralize(@application.errors.count, "error")
         |  prohibited this attendee_application from being saved:
       ul
-        - @attendee_application.errors.full_messages.each do |message|
+        - @application.errors.full_messages.each do |message|
           li
             = message
   .field

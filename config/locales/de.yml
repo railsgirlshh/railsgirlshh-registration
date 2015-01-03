@@ -70,12 +70,9 @@ de:
   notice:
     registration_canceled: "Du hast Deine Anmeldung zurückgezogen."
     cancellation_error: "Da hat leider nicht geklappt."
-    attendee:
-      registration_not_open: "Bewerbungen werden derzeit nicht entgegengenommen."
-      registration_successful: "Deine Bewerbung wurde entgegengenommen, Du bekommst bald eine E-Mail von uns."
+    registration_not_open: "Anmeldungen werden derzeit nicht entgegengenommen."
+    registration_successful: "Deine Anmeldung wurde entgegengenommen. Du bekommst eine E-Mail von uns."
     coach:
-      registration_not_open: "Anmeldung als Coach derzeit nicht möglich."
-      registration_successful: "Du bist jetzt als Coach angemeldet."
       dinner_canceled: "Teilnahme am Coachdinner abgesagt. Du bist nach wie vor für den Workshop registriert."
       dinner_joined: "Du bist jetzt zum Coachdinner angemeldet."
 
