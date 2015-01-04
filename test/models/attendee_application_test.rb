@@ -73,7 +73,7 @@ module AttendeeApplicationTest
 
       rejected_email = ActionMailer::Base.deliveries.last
 
-      assert_equal "Keine Teilnahme am Rails Girls Hamburg Workshop", rejected_email.subject
+      assert_equal "Absage für den Rails Girls Hamburg Workshop", rejected_email.subject
       assert_match(/Hallo Ada/, rejected_email.body.to_s)
 
       assert_equal @attendee_application.email, rejected_email.to[0]
@@ -100,7 +100,7 @@ module AttendeeApplicationTest
 
       accepted_email = ActionMailer::Base.deliveries.last
 
-      assert_equal "Teilnahme am Rails Girls Hamburg Workshop", accepted_email.subject
+      assert_equal "Zusage für den Rails Girls Hamburg Workshop", accepted_email.subject
       assert_match(/Hallo Ada/, accepted_email.body.to_s)
 
       assert_equal @attendee_application.email, accepted_email.to[0]

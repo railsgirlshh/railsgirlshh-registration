@@ -101,9 +101,11 @@ de:
     cancel_cancel: "Abbrechen"
     cancel_question: "Möchtest Du Deine Teilnahme an der Veranstaltung absagen?"
 
-  mailer:
+  mail:
+    salutation: "Hallo %{first_name},"
     attendee_application:
       welcome_email:
+        body: "wir haben deine Bewerbung für den nächsten Workshop erhalten. Leider\nsind die Plätze begrenzt, deshalb können wir nicht alle Anmeldungen\nberücksichtigen. Die Zu- und Absagen verschicken wir einige Tage\nnach Ende der Anmeldefrist per E-Mail. Bis dahin bitten wir dich um\nGeduld.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n\n%{self_care_url}"
         subject: Deine Bewerbung für den Rails Girls Hamburg Workshop
       accepted_email:
         subject: Zusage für den Rails Girls Hamburg Workshop
@@ -113,11 +115,6 @@ de:
       welcome_email:
         subject: Rails Girls Hamburg Workshop
 
-  mail:
-    salutation: "Hallo %{first_name},"
-    attendee_welcome: 
-      body: "wir haben deine Bewerbung für den nächsten Workshop erhalten. Leider\nsind die Plätze begrenzt, deshalb können wir nicht alle Anmeldungen\nberücksichtigen. Die Zu- und Absagen verschicken wir einige Tage\nnach Ende der Anmeldefrist per E-Mail. Bis dahin bitten wir dich um\nGeduld.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n\n%{self_care_url}"
-      subject: "Rails Girls Hamburg Workshop"
   admin:
     events:
       index:
