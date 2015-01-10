@@ -116,7 +116,10 @@ de:
     coach_application:
       welcome_email:
         subject: Rails Girls Hamburg Workshop
-        body: "wir freuen uns, dass Du beim Workshop am %{event_date} dabei bist!\n\nAm %{coach_dinner_date} möchten wir alle Coaches als Dankeschön zu einem\ngemeinsamen Abendessen einladen. Dort werden wir uns zunächst\nkennenlernen, offene Fragen klären und den Ablauf des Workshops\nkurz erläutern. Alle wichtigen Infos gibt es aber auch noch mal\nper Mail - für alle die nicht am Coachdinner teilnehmen können.\n\nDen Ablauf und alle Treffpunkte gibt es bereits auf unserer\nWebseite: http://railsgirls.com/hamburg.\n\nWenn du doch nicht dabei sein kannst, gib uns bitte über folgenden\nAbsage-Link Bescheid:\n%{self_care_url}."
+        body:
+          intro: wir freuen uns, dass Du beim Workshop am %{event_date} dabei bist!
+          dinner: "Am %{coach_dinner_date} möchten wir alle Coaches als Dankeschön zu einem\ngemeinsamen Abendessen einladen. Dort werden wir uns zunächst\nkennenlernen, offene Fragen klären und den Ablauf des Workshops\nkurz erläutern. Alle wichtigen Infos gibt es aber auch noch mal\nper Mail - für alle die nicht am Coachdinner teilnehmen können."
+          text: "Den Ablauf und alle Treffpunkte gibt es bereits auf unserer\nWebseite: http://railsgirls.com/hamburg.\n\nWenn du doch nicht dabei sein kannst, gib uns bitte über folgenden\nAbsage-Link Bescheid:\n%{self_care_url}."
 
   admin:
     events:

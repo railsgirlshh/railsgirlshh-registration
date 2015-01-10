@@ -1,3 +1,8 @@
 = t 'mail.salutation', first_name: @coach_application.first_name
 = "\n\n"
-= t 'mail.coach_application.welcome_email.body', self_care_url: coach_self_care_url(@coach_application), coach_dinner_date: l(@coach_application.event.coach_dinner_date), event_date: l(@coach_application.event.event_date)
+= t 'mail.coach_application.welcome_email.body.intro', event_date: l(@coach_application.event.event_date)
+= "\n\n"
+- if @coach_application.event.coach_dinner_date.present?
+  = t 'mail.coach_application.welcome_email.body.dinner', coach_dinner_date: l(@coach_application.event.coach_dinner_date)
+  = "\n\n"
+= t 'mail.coach_application.welcome_email.body.text', self_care_url: coach_self_care_url(@coach_application)
