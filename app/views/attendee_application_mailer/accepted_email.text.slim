@@ -1,3 +1,3 @@
-| Hallo #{@attendee_application.first_name}
-
-  Du hast einen Platz bekommen!
+= t 'mail.salutation', first_name: @attendee_application.first_name
+= "\n\n"
+= t 'mail.attendee_application.accepted_email.body', self_care_url: attendee_self_care_url(@attendee_application), event_date: l(@attendee_application.event.event_date)

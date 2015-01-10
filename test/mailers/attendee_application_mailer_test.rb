@@ -25,7 +25,6 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
     assert_equal ['railsgirlshh@gmail.com'], email.from
     assert_equal [attendee_application.email], email.to
     assert_equal 'Zusage für den Rails Girls Hamburg Workshop', email.subject
-    assert_equal read_fixture('attendee_application_accepted_email').join, email.body.to_s
   end
 
   test "rejected_email" do
