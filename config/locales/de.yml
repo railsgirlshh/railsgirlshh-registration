@@ -112,6 +112,7 @@ de:
         body: "wir freuen uns, dir die Teilnahme am Rails Girls Workshop am %{event_date}\nbestätigen zu können!\n\nInformationen zu Ablauf, Uhrzeit und Ort findest du auf unserer Webseite:\nhttp://railsgirls.com/hamburg.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n%{self_care_url}.\n\nDie Plätze sind begrenzt und es gibt eine Warteliste."
       rejected_email:
         subject: Absage für den Rails Girls Hamburg Workshop
+        body: "leider müssen wir dir mitteilen, dass wir dir für den Rails Girls Workshop in Hamburg\ndieses Mal absagen müssen. Auch in diesem Jahr gab es wieder sehr viel mehr\nAnmeldungen als Plätze.\n\nSollte kurzfristig doch noch ein Platz frei werden, kontaktieren wir Dich für den\nNachrückprozess.\n\nAußerdem möchten wir euch ganz herzlich zu unseren regelmäßigen Meetups einladen.\nWir treffen uns jeden vierten Mittwoch im Monat ab 19:30. Die Treffen sind offen für alle \nInteressierten - egal ob sie schon an einem Workshop teilgenommen haben oder nicht.\nHier könnt ihr Fragen loswerden und euch austauschen. Weitere Infos zu den Meetups\ngibt es auf http://railsgirlshh.onruby.de/."
     coach_application:
       welcome_email:
         subject: Rails Girls Hamburg Workshop
