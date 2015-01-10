@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'test_helper'
 
 class AttendeeApplicationMailerTest < ActionMailer::TestCase
@@ -12,7 +13,6 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
     assert_equal ['railsgirlshh@gmail.com'], email.from
     assert_equal [attendee_application.email], email.to
     assert_equal 'Deine Bewerbung für den Rails Girls Hamburg Workshop', email.subject
-    assert_equal read_fixture('attendee_application_welcome_email').join, email.body.to_s
   end
 
   test "accepted_email" do
