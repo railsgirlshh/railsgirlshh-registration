@@ -12,6 +12,5 @@ class CoachApplicationMailerTest < ActionMailer::TestCase
     assert_equal ['railsgirlshh@gmail.com'], email.from
     assert_equal [coach_application.email], email.to
     assert_equal 'Rails Girls Hamburg Workshop', email.subject
-    assert_equal read_fixture('coach_application_welcome_email').join, email.body.to_s
   end
 end
