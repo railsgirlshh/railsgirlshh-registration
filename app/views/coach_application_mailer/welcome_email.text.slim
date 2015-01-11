@@ -5,4 +5,8 @@
 - if @coach_application.event.coach_dinner_date.present?
   = t 'mail.coach_application.welcome_email.body.dinner', coach_dinner_date: l(@coach_application.event.coach_dinner_date)
   = "\n\n"
-= t 'mail.coach_application.welcome_email.body.text', self_care_url: coach_self_care_url(@coach_application)
+= t 'mail.coach_application.welcome_email.body.text'
+- if @coach_application.event.coach_dinner_date.present?
+  = t 'mail.coach_application.welcome_email.body.cancel_with_dinner', self_care_url: coach_self_care_url(@coach_application)
+- else
+  = t 'mail.coach_application.welcome_email.body.cancel', self_care_url: coach_self_care_url(@coach_application)
