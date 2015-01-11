@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'test_helper'
 
 class AttendeeApplicationMailerTest < ActionMailer::TestCase
@@ -11,8 +12,7 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
     # Test the body of the sent email contains what we expect it to
     assert_equal ['railsgirlshh@gmail.com'], email.from
     assert_equal [attendee_application.email], email.to
-    assert_equal 'Rails Girls Hamburg Workshop', email.subject
-    assert_equal read_fixture('attendee_application_welcome_email').join, email.body.to_s
+    assert_equal 'Deine Bewerbung für den Rails Girls Hamburg Workshop', email.subject
   end
 
   test "accepted_email" do
@@ -24,8 +24,7 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
     # Test the body of the sent email contains what we expect it to
     assert_equal ['railsgirlshh@gmail.com'], email.from
     assert_equal [attendee_application.email], email.to
-    assert_equal 'Teilnahme am Rails Girls Hamburg Workshop', email.subject
-    assert_equal read_fixture('attendee_application_accepted_email').join, email.body.to_s
+    assert_equal 'Zusage für den Rails Girls Hamburg Workshop', email.subject
   end
 
   test "rejected_email" do
@@ -37,7 +36,6 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
     # Test the body of the sent email contains what we expect it to
     assert_equal ['railsgirlshh@gmail.com'], email.from
     assert_equal [attendee_application.email], email.to
-    assert_equal 'Keine Teilnahme am Rails Girls Hamburg Workshop', email.subject
-    assert_equal read_fixture('attendee_application_rejected_email').join, email.body.to_s
+    assert_equal 'Absage für den Rails Girls Hamburg Workshop', email.subject
   end
 end

@@ -4,6 +4,7 @@ minimal_event:
   id: 1
   title: Spring Workshop
   event_date: <%= Date.today+10 %>
+  coach_dinner_date: <%= Date.today+5 %>
 
 past_event:
   title: Past Workshop

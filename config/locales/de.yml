@@ -103,9 +103,26 @@ de:
 
   mail:
     salutation: "Hallo %{first_name},"
-    attendee_welcome: 
-      body: "wir haben deine Bewerbung für den nächsten Workshop erhalten. Leider\nsind die Plätze begrenzt, deshalb können wir nicht alle Anmeldungen\nberücksichtigen. Die Zu- und Absagen verschicken wir einige Tage\nnach Ende der Anmeldefrist per E-Mail. Bis dahin bitten wir dich um\nGeduld.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n\n%{self_care_url}"
-      subject: "Rails Girls Hamburg Workshop"
+    attendee_application:
+      welcome_email:
+        body: "wir haben deine Bewerbung für den nächsten Workshop erhalten. Leider\nsind die Plätze begrenzt, deshalb können wir nicht alle Anmeldungen\nberücksichtigen. Die Zu- und Absagen verschicken wir einige Tage\nnach Ende der Anmeldefrist per E-Mail. Bis dahin bitten wir dich um\nGeduld.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n\n%{self_care_url}"
+        subject: Deine Bewerbung für den Rails Girls Hamburg Workshop
+      accepted_email:
+        subject: Zusage für den Rails Girls Hamburg Workshop
+        body: "wir freuen uns, dir die Teilnahme am Rails Girls Workshop am %{event_date}\nbestätigen zu können!\n\nInformationen zu Ablauf, Uhrzeit und Ort findest du auf unserer Webseite:\nhttp://railsgirls.com/hamburg.\n\nWenn du doch nicht teilnehmen kannst, melde dich bitte schnellstmöglich\nüber folgenden Link ab:\n%{self_care_url}.\n\nDie Plätze sind begrenzt und es gibt eine Warteliste."
+      rejected_email:
+        subject: Absage für den Rails Girls Hamburg Workshop
+        body: "leider müssen wir dir mitteilen, dass wir dir für den Rails Girls Workshop\nin Hamburg dieses Mal absagen müssen. Auch in diesem Jahr gab es wieder\nsehr viel mehr Anmeldungen als Plätze.\n\nSollte kurzfristig doch noch ein Platz frei werden, kontaktieren wir Dich\nfür den Nachrückprozess.\n\nAußerdem möchten wir euch ganz herzlich zu unseren regelmäßigen Meetups\neinladen. Wir treffen uns jeden vierten Mittwoch im Monat ab 19:30. Die\nTreffen sind offen für alle Interessierten - egal ob sie schon an einem\nWorkshop teilgenommen haben oder nicht. Hier könnt ihr Fragen loswerden\nund euch austauschen. Weitere Infos zu den Meetups gibt es auf:\nhttp://railsgirlshh.onruby.de/."
+    coach_application:
+      welcome_email:
+        subject: Rails Girls Hamburg Workshop
+        body:
+          intro: wir freuen uns, dass Du beim Workshop am %{event_date} dabei bist!
+          dinner: "Am %{coach_dinner_date} möchten wir alle Coaches als Dankeschön zu einem\ngemeinsamen Abendessen einladen. Dort werden wir uns zunächst\nkennenlernen, offene Fragen klären und den Ablauf des Workshops\nkurz erläutern. Alle wichtigen Infos gibt es aber auch noch mal\nper Mail - für alle die nicht am Coachdinner teilnehmen können."
+          text: "Den Ablauf und alle Treffpunkte gibt es bereits auf unserer\nWebseite: http://railsgirls.com/hamburg.\n\n"
+          cancel: "Wenn du doch nicht dabei sein kannst, gib uns bitte über folgenden\nAbsage-Link Bescheid:\n%{self_care_url}."
+          cancel_with_dinner: "Wenn du für das Dinner oder den Workshop absagen mußt, gib uns\nbitte über folgenden Absage-Link Bescheid:\n%{self_care_url}."
+
   admin:
     events:
       index:

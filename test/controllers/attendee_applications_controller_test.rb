@@ -56,7 +56,7 @@ class AttendeeApplicationsControllerTest < ActionController::TestCase
     end
     welcome_email = ActionMailer::Base.deliveries.last
 
-    assert_equal "Rails Girls Hamburg Workshop", welcome_email.subject
+    assert_equal "Deine Bewerbung für den Rails Girls Hamburg Workshop", welcome_email.subject
     assert_equal @attendee_application.email, welcome_email.to[0]
     assert_match(/Hallo Ada/, welcome_email.body.to_s)
   end
