@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.9'
 gem 'pg', '~> 0.17.1'
 gem 'aasm', '~> 4.0.7'
 gem 'mocha', '~> 1.1.0', group: :test
