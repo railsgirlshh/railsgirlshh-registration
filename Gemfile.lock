@@ -121,7 +121,7 @@ DEPENDENCIES
   jquery-rails
   mocha (~> 1.1.0)
   pg (~> 0.17.1)
-  rails (~> 4.1.9)
+  rails (= 4.1.9)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   slim (~> 2.0.3)
