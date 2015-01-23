@@ -1,7 +1,7 @@
 # README
 
-[<img src="https://travis-ci.org/railsgirlshh/railsgirlshh-registration.svg?branch=master" alt="Build Status" />](https://travis-ci.org/railsgirlshh/railsgirlshh-registration)
-
+[![Build Status](https://travis-ci.org/railsgirlshh/railsgirlshh-registration.svg?branch=master)](https://travis-ci.org/railsgirlshh/railsgirlshh-registration)
+[![Build Status](https://travis-ci.org/railsgirlshh/railsgirlshh-registration.svg?branch=production)](https://travis-ci.org/railsgirlshh/railsgirlshh-registration)
 [![Code Climate](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration/badges/gpa.svg)](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration) [![Test Coverage](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration/badges/coverage.svg)](https://codeclimate.com/github/railsgirlshh/railsgirlshh-registration)
 
 Rails Girls Hamburg - attendee application and coach registration
