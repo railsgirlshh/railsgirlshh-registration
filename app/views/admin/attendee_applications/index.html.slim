@@ -5,6 +5,24 @@ p
   | Achtung, accept / reject Buttons versenden emails an die Teilnehmerin!
 
 table
+  tbody
+    tr
+      td
+        strong
+          | Gesamt
+      td
+        strong
+          = @attendee_applications.count
+    - AttendeeApplication.aasm.states.map(&:name).each do |status|
+      tr
+        td
+          = status.to_s.humanize
+        td
+          - # ugly hack in next line - don't ask
+          - @attendee_applications.open
+          = @attendee_applications.send(status.to_sym).count
+
+table
   thead
     tr
       th

@@ -1,6 +1,23 @@
 - content_for(:title, "Coach Applications")
 h2
   = @event.title
+
+table
+  tbody
+    tr
+      td
+        strong
+          | Gesamt
+      td
+        strong
+          = @coach_applications.count
+    - CoachApplication.statuses.keys.each do |status|
+      tr
+        td
+          = status.to_s.humanize
+        td
+          = @coach_applications.send(status.to_sym).count
+
 table
   thead
     tr
