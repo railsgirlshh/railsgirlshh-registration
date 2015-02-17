@@ -21,20 +21,20 @@ class AttendeeApplication < ActiveRecord::Base
     state :on_waiting_list
     state :canceled
 
-    event :get_accepted do
-      after do
-        AttendeeApplicationMailer.accepted_email(self).deliver
-      end
-
+    event :get_accepted, after: :send_accept_mail do
       transitions :from => [:open, :on_waiting_list], :to => :accepted
     end
 
-    event :get_rejected do
-      after do
-        AttendeeApplicationMailer.rejected_email(self).deliver
-      end
-
+    event :get_rejected, after: :send_reject_mail do
       transitions :from => [:open, :on_waiting_list], :to => :rejected
     end
+  end
+
+  def send_accept_mail
+    AttendeeApplicationMailer.accepted_email(self).deliver
+  end
+
+  def send_reject_mail
+    AttendeeApplicationMailer.rejected_email(self).deliver
   end
 end
