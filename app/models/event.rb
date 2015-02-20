@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-  has_many :attendee_applications
-  has_many :coach_applications
+  has_many :attendee_applications, dependent: :destroy
+  has_many :coach_applications, dependent: :destroy
 
   validates_presence_of :title, :event_date
 
