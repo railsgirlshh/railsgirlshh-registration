@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
 
       if @application.save
         redirect_to root_url, notice: t('notice.registration_successful')
-        mailer_class.welcome_email(@application).deliver
+        mailer_class.welcome_email(@application).deliver_now
       else
         render :new
       end

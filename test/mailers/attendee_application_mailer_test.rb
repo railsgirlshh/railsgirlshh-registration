@@ -6,7 +6,7 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
   test "welcome_email" do
     attendee_application = attendee_applications(:one)
     # Send the email, then test that it got queued
-    email = AttendeeApplicationMailer.welcome_email(attendee_application).deliver
+    email = AttendeeApplicationMailer.welcome_email(attendee_application).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     # Test the body of the sent email contains what we expect it to
@@ -18,7 +18,7 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
   test "accepted_email" do
     attendee_application = attendee_applications(:one)
     # Send the email, then test that it got queued
-    email = AttendeeApplicationMailer.accepted_email(attendee_application).deliver
+    email = AttendeeApplicationMailer.accepted_email(attendee_application).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     # Test the body of the sent email contains what we expect it to
@@ -30,7 +30,7 @@ class AttendeeApplicationMailerTest < ActionMailer::TestCase
   test "rejected_email" do
     attendee_application = attendee_applications(:one)
     # Send the email, then test that it got queued
-    email = AttendeeApplicationMailer.rejected_email(attendee_application).deliver
+    email = AttendeeApplicationMailer.rejected_email(attendee_application).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     # Test the body of the sent email contains what we expect it to

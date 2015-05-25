@@ -31,10 +31,10 @@ class AttendeeApplication < ActiveRecord::Base
   end
 
   def send_accept_mail
-    AttendeeApplicationMailer.accepted_email(self).deliver
+    AttendeeApplicationMailer.accepted_email(self).deliver_now
   end
 
   def send_reject_mail
-    AttendeeApplicationMailer.rejected_email(self).deliver
+    AttendeeApplicationMailer.rejected_email(self).deliver_now
   end
 end

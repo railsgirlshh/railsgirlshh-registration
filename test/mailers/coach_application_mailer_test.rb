@@ -5,7 +5,7 @@ class CoachApplicationMailerTest < ActionMailer::TestCase
   test "welcome_email" do
     coach_application = coach_applications(:one)
     # Send the email, then test that it got queued
-    email = CoachApplicationMailer.welcome_email(coach_application).deliver
+    email = CoachApplicationMailer.welcome_email(coach_application).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     # Test the body of the sent email contains what we expect it to
