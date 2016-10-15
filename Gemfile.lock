@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    aasm (4.0.8)
+    aasm (4.11.1)
     actionmailer (4.2.7)
       actionpack (= 4.2.7)
       actionview (= 4.2.7)
@@ -143,7 +143,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aasm (~> 4.0.7)
+  aasm (~> 4.11.1)
   codeclimate-test-reporter
   foundation-rails (~> 5.2.3)
   jquery-rails
@@ -160,4 +160,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.12.5
+   1.13.5
