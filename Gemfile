@@ -9,7 +9,7 @@ gem 'mocha', '~> 1.1.0', group: :test
 gem "codeclimate-test-reporter", group: :test, require: nil
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
