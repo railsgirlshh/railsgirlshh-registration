@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 #Use foundation
-gem 'foundation-rails', '~> 5.2.3'
+gem 'foundation-rails', '~> 5.5.3'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
