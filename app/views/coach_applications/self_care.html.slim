@@ -9,14 +9,15 @@
     = button_to t('applications.cancel_button'), { action: "cancel", event_id: @event.id, token: @application.token }, class: 'button tiny radius'
     = link_to t('applications.cancel_cancel'), root_url
 
-  h1
-    = t 'coach_applications.coachdinner_participation_hl'
-  - if @application.coachdinner
-    p
-      = t 'coach_applications.coachdinner_status_yes'
-    =  button_to t('coach_applications.coachdinner_cancel'), { action: "cancel_dinner", event_id: @event.id, token: @application.token }, class: 'button tiny radius'
-  - else
-    p
-      = t 'coach_applications.coachdinner_status_no'
-    =  button_to t('coach_applications.coachdinner_join'), { action: "join_dinner", event_id: @event.id, token: @application.token },  class: 'button tiny radius'
-  = link_to  t('applications.cancel_cancel'), root_url
+  - if @event.coach_dinner_date
+    h1
+      = t 'coach_applications.coachdinner_participation_hl'
+    - if @application.coachdinner
+      p
+        = t 'coach_applications.coachdinner_status_yes'
+      =  button_to t('coach_applications.coachdinner_cancel'), { action: "cancel_dinner", event_id: @event.id, token: @application.token }, class: 'button tiny radius'
+    - else
+      p
+        = t 'coach_applications.coachdinner_status_no'
+      =  button_to t('coach_applications.coachdinner_join'), { action: "join_dinner", event_id: @event.id, token: @application.token },  class: 'button tiny radius'
+    = link_to  t('applications.cancel_cancel'), root_url
